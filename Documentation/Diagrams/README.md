@@ -10,12 +10,6 @@ Tous les diagrammes partagent le même thème :
 - les attributs en **rouge** sont des références à une entité d'un autre service, par
   identifiant, sans clé étrangère inter-base.
 
-## Vue globale
-
-![Diagramme de classes global](class-diagram-global.png)
-
-Fichier vectoriel : [class-diagram-global.svg](class-diagram-global.svg)
-
 ## Diagrammes par microservice
 
 | Microservice | Entités | Diagramme |
