@@ -73,7 +73,6 @@ Cross-service references are kept as external identifiers, without any inter-dat
 - Spring Boot
 - Spring Web
 - Spring Data JPA
-- Spring Validation
 - MySQL (database)
 
 ## 5. API Endpoints
