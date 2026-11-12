@@ -2,16 +2,17 @@
 
 ## 1. Overview
 
-The Municipal Management Service is a backend microservice of the CiviIA platform. It is responsible for managing municipalities and their administrative departments.
+The Municipal Management Service is a backend microservice of the CiviIA platform. It represents the administrative organisation of the municipality and identifies the teams responsible for each category of urban problem and each geographic area.
 
-It provides REST APIs to create, retrieve, update and delete municipal information.
+It provides REST APIs to create, retrieve, update and deactivate municipalities, departments, employees, category assignments and responsibility zones.
 
 ## 2. Main Responsibilities
 
-- Manage municipalities.
-- Manage departments within each municipality.
-- Maintain relationships between municipalities and departments.
-- Provide municipal information to other microservices.
+- Manage municipalities and their administrative departments.
+- Manage municipal employees and department managers.
+- Assign problem categories to the departments responsible for them.
+- Define the geographic zones covered by each department.
+- Provide department, employee and zone information to other microservices.
 
 ## 3. Main Entities
 
@@ -21,20 +22,50 @@ Represents a municipality registered in the CiviIA platform.
 Suggested attributes:
 - id
 - name
+- city
 - address
-- region
-- description
-- contactEmail
-- phoneNumber
 
 ### Department
 Represents an administrative department belonging to a municipality.
 
 Suggested attributes:
 - id
+- municipalityId
 - name
 - description
-- municipalityId
+- managerId
+
+### Employee
+Represents a municipal employee attached to a department.
+
+Suggested attributes:
+- id
+- departmentId
+- userId
+- role
+- status
+
+### DepartmentCategory
+Represents the assignment of a problem category to the department responsible for it.
+
+Suggested attributes:
+- id
+- departmentId
+- categoryId
+
+### DepartmentZone
+Represents a geographic area under the responsibility of a department.
+
+Suggested attributes:
+- id
+- departmentId
+- zoneName
+- latitude
+- longitude
+
+Cross-service references are kept as external identifiers, without any inter-database foreign key:
+- `Employee.userId` → User Service
+- `DepartmentCategory.categoryId` → Report Service (`ReportCategory`)
 
 ## 4. Technologies
 
@@ -63,10 +94,38 @@ Suggested attributes:
 | GET | `/api/departments/{id}` | Get department by ID |
 | POST | `/api/departments` | Create department |
 | PUT | `/api/departments/{id}` | Update department |
-| DELETE | `/api/departments/{id}` | Delete department |
+| DELETE | `/api/departments/{id}` | Deactivate department |
+
+### Employee
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/employees` | Get all employees |
+| GET | `/api/employees/{id}` | Get employee by ID |
+| POST | `/api/employees` | Create employee |
+| PUT | `/api/employees/{id}` | Update employee |
+| DELETE | `/api/employees/{id}` | Deactivate employee |
+
+### Department Category
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/department-categories` | Get all category assignments |
+| GET | `/api/department-categories/{id}` | Get a category assignment by ID |
+| POST | `/api/department-categories` | Assign a category to a department |
+| PUT | `/api/department-categories/{id}` | Update a category assignment |
+| DELETE | `/api/department-categories/{id}` | Remove a category assignment |
+
+### Department Zone
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/department-zones` | Get all responsibility zones |
+| GET | `/api/department-zones/{id}` | Get a responsibility zone by ID |
+| POST | `/api/department-zones` | Create a responsibility zone |
+| PUT | `/api/department-zones/{id}` | Update a responsibility zone |
+| DELETE | `/api/department-zones/{id}` | Delete a responsibility zone |
 
 ## 6. Project Structure
 
+```
 municipal-management-service/
 ├── src/
 │   └── main/
@@ -76,3 +135,8 @@ municipal-management-service/
 └── README.md
 ```
 
+## 7. Class Diagram
+
+![Class diagram](../../Documentation/Diagrams/class-diagram-municipal-management-service.png)
+
+Full resolution: [class-diagram-municipal-management-service.svg](../../Documentation/Diagrams/class-diagram-municipal-management-service.svg)
