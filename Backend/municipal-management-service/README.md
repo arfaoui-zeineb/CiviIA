@@ -30,42 +30,28 @@ Represents an administrative department belonging to a municipality.
 
 Suggested attributes:
 - id
-- municipalityId
 - name
-- description
-- managerId
+- city
+- address
 
-### Employee
-Represents a municipal employee attached to a department.
+### Department
+Represents an administrative department belonging to a municipality.
 
 Suggested attributes:
 - id
-- departmentId
-- userId
-- role
-- status
+- municipalityId
+- name
+- description
+- municipalityId
+- managerId
 
 ### DepartmentCategory
-Represents the assignment of a problem category to the department responsible for it.
+Represents the link between a department and a problem category it is responsible for.
 
 Suggested attributes:
 - id
 - departmentId
 - categoryId
-
-### DepartmentZone
-Represents a geographic area under the responsibility of a department.
-
-Suggested attributes:
-- id
-- departmentId
-- zoneName
-- latitude
-- longitude
-
-Cross-service references are kept as external identifiers, without any inter-database foreign key:
-- `Employee.userId` → User Service
-- `DepartmentCategory.categoryId` → Report Service (`ReportCategory`)
 
 ## 4. Technologies
 
@@ -122,6 +108,13 @@ Cross-service references are kept as external identifiers, without any inter-dat
 | PUT | `/api/department-zones/{id}` | Update a responsibility zone |
 | DELETE | `/api/department-zones/{id}` | Delete a responsibility zone |
 
+### Department Category
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/departments/{id}/categories` | Get categories assigned to a department |
+| POST | `/api/departments/{id}/categories` | Assign a category to a department |
+| DELETE | `/api/departments/{id}/categories/{categoryId}` | Remove a category from a department |
+
 ## 6. Project Structure
 
 ```
@@ -136,6 +129,6 @@ municipal-management-service/
 
 ## 7. Class Diagram
 
-![Class diagram](../../Documentation/Diagrams/class-diagram-municipal-management-service.png)
+![Class diagram](../../Documentation/Diagrams/class-diagram-municipal-management.png)
 
-Full resolution: [class-diagram-municipal-management-service.svg](../../Documentation/Diagrams/class-diagram-municipal-management-service.svg)
+Full resolution: [class-diagram-municipal-management.svg](../../Documentation/Diagrams/class-diagram-municipal-management.svg)
