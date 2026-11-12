@@ -128,3 +128,9 @@ citizen-engagement-service/
 ├── pom.xml
 └── README.md
 ```
+
+## 7. Class Diagram
+
+![Class diagram](../../Documentation/Diagrams/class-diagram-citizen-engagement-service.png)
+
+Full resolution: [class-diagram-citizen-engagement-service.svg](../../Documentation/Diagrams/class-diagram-citizen-engagement-service.svg)

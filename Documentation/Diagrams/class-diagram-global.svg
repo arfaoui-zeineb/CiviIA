@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2400" height="1298" viewBox="0 0 2400 1298">
+<rect width="2400" height="1298" fill="#FFFFFF"/>
+<text x="1200.0" y="48.0" font-family="Segoe UI, Arial, sans-serif" font-size="30" font-weight="600" fill="#393939" text-anchor="middle">CiviIA — Diagramme de classes (6 microservices)</text>
+<polygon points="702.5,84.0 709.0,90.0 715.5,84.0 709.0,78.0" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<text x="723.5" y="88.0" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#393939" text-anchor="start">composition</text>
+<polygon points="833.5,84.0 840.0,90.0 846.5,84.0 840.0,78.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<text x="854.5" y="88.0" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#393939" text-anchor="start">agrégation</text>
+<polyline points="954.5,84.0 969.5,84.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="959.5,88.5 970.5,84.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="959.5,79.5 970.5,84.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="975.5" y="88.0" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#393939" text-anchor="start">association</text>
+<text x="1075.5" y="88.0" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#A63A3A" text-anchor="start">Entité (rouge) = référence par identifiant entre services (aucune clé étrangère inter-base)</text>
+<rect x="37.0" y="118.0" width="758.0" height="522.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="37.0" y="118.0" width="758.0" height="44.0" fill="#EEEDFB"/>
+<polyline points="37.0,162.0 795.0,162.0" fill="none" stroke="#645F7C" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="416.0" y="145.5" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">User Service</text>
+<rect x="821.0" y="118.0" width="758.0" height="522.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="821.0" y="118.0" width="758.0" height="44.0" fill="#E0F3EF"/>
+<polyline points="821.0,162.0 1579.0,162.0" fill="none" stroke="#645F7C" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1200.0" y="145.5" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Report Service</text>
+<rect x="1605.0" y="118.0" width="758.0" height="522.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="1605.0" y="118.0" width="758.0" height="44.0" fill="#FBEDE8"/>
+<polyline points="1605.0,162.0 2363.0,162.0" fill="none" stroke="#645F7C" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1984.0" y="145.5" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Incident Service</text>
+<rect x="37.0" y="668.0" width="758.0" height="602.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="37.0" y="668.0" width="758.0" height="44.0" fill="#FCEBF1"/>
+<polyline points="37.0,712.0 795.0,712.0" fill="none" stroke="#645F7C" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="416.0" y="695.5" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Municipal Management</text>
+<rect x="821.0" y="668.0" width="758.0" height="602.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="821.0" y="668.0" width="758.0" height="44.0" fill="#FAEDDA"/>
+<polyline points="821.0,712.0 1579.0,712.0" fill="none" stroke="#645F7C" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1200.0" y="695.5" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Intervention Service</text>
+<rect x="1605.0" y="668.0" width="758.0" height="602.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="1605.0" y="668.0" width="758.0" height="44.0" fill="#E7F1FB"/>
+<polyline points="1605.0,712.0 2363.0,712.0" fill="none" stroke="#645F7C" stroke-width="1.2" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1984.0" y="695.5" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Citizen Engagement</text>
+<rect x="53.0" y="172.0" width="343.0" height="216.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="53.0" y="172.0" width="343.0" height="30.0" fill="#EEEDFB"/>
+<polyline points="53.0,202.0 396.0,202.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="224.5" y="192.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">User</text>
+<text x="63.0" y="216.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="63.0" y="236.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+firstName: String</text>
+<text x="63.0" y="256.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+lastName: String</text>
+<text x="63.0" y="276.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+email: String</text>
+<text x="63.0" y="296.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+passwordHash: String</text>
+<text x="63.0" y="316.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+phoneNumber: String</text>
+<text x="63.0" y="336.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+status: String</text>
+<text x="63.0" y="356.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+verified: Boolean</text>
+<text x="63.0" y="376.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+deletedAt: DateTime</text>
+<rect x="53.0" y="422.0" width="343.0" height="176.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="53.0" y="422.0" width="343.0" height="30.0" fill="#EEEDFB"/>
+<polyline points="53.0,452.0 396.0,452.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="224.5" y="442.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">UserAddress</text>
+<text x="63.0" y="466.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="63.0" y="486.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+userId: Long → User</text>
+<text x="63.0" y="506.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+street: String</text>
+<text x="63.0" y="526.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+city: String</text>
+<text x="63.0" y="546.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+postalCode: String</text>
+<text x="63.0" y="566.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+latitude: Double</text>
+<text x="63.0" y="586.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+longitude: Double</text>
+<rect x="436.0" y="172.0" width="343.0" height="96.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="436.0" y="172.0" width="343.0" height="30.0" fill="#EEEDFB"/>
+<polyline points="436.0,202.0 779.0,202.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="607.5" y="192.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Role</text>
+<text x="446.0" y="216.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="446.0" y="236.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+name: String</text>
+<text x="446.0" y="256.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+description: String</text>
+<rect x="436.0" y="302.0" width="343.0" height="116.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="436.0" y="302.0" width="343.0" height="30.0" fill="#EEEDFB"/>
+<polyline points="436.0,332.0 779.0,332.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="607.5" y="322.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">UserPreference</text>
+<text x="446.0" y="346.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="446.0" y="366.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+userId: Long → User</text>
+<text x="446.0" y="386.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+language: String</text>
+<text x="446.0" y="406.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+notificationsEnabled: Boolean</text>
+<rect x="837.0" y="172.0" width="343.0" height="236.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="837.0" y="172.0" width="343.0" height="30.0" fill="#E0F3EF"/>
+<polyline points="837.0,202.0 1180.0,202.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1008.5" y="192.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Report</text>
+<text x="847.0" y="216.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="847.0" y="236.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="847.0" y="256.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+title: String</text>
+<text x="847.0" y="276.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+description: String</text>
+<text x="847.0" y="296.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+categoryId: Long → ReportCategory</text>
+<text x="847.0" y="316.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+latitude: Double</text>
+<text x="847.0" y="336.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+longitude: Double</text>
+<text x="847.0" y="356.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+status: String</text>
+<text x="847.0" y="376.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<text x="847.0" y="396.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+deletedAt: DateTime</text>
+<rect x="837.0" y="442.0" width="343.0" height="116.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="837.0" y="442.0" width="343.0" height="30.0" fill="#E0F3EF"/>
+<polyline points="837.0,472.0 1180.0,472.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1008.5" y="462.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">ReportImage</text>
+<text x="847.0" y="486.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="847.0" y="506.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+reportId: Long → Report</text>
+<text x="847.0" y="526.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+cloudinaryUrl: String</text>
+<text x="847.0" y="546.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+takenAt: DateTime</text>
+<rect x="1220.0" y="172.0" width="343.0" height="116.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1220.0" y="172.0" width="343.0" height="30.0" fill="#E0F3EF"/>
+<polyline points="1220.0,202.0 1563.0,202.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1391.5" y="192.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">ReportCategory</text>
+<text x="1230.0" y="216.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1230.0" y="236.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+name: String</text>
+<text x="1230.0" y="256.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+description: String</text>
+<text x="1230.0" y="276.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+active: Boolean</text>
+<rect x="1220.0" y="322.0" width="343.0" height="136.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1220.0" y="322.0" width="343.0" height="30.0" fill="#E0F3EF"/>
+<polyline points="1220.0,352.0 1563.0,352.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1391.5" y="342.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">ReportHistory</text>
+<text x="1230.0" y="366.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1230.0" y="386.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+reportId: Long → Report</text>
+<text x="1230.0" y="406.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+oldStatus: String</text>
+<text x="1230.0" y="426.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+newStatus: String</text>
+<text x="1230.0" y="446.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+changedAt: DateTime</text>
+<rect x="1621.0" y="172.0" width="343.0" height="196.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1621.0" y="172.0" width="343.0" height="30.0" fill="#FBEDE8"/>
+<polyline points="1621.0,202.0 1964.0,202.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1792.5" y="192.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Incident</text>
+<text x="1631.0" y="216.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1631.0" y="236.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+title: String</text>
+<text x="1631.0" y="256.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+description: String</text>
+<text x="1631.0" y="276.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+categoryId: Long → ReportCategory</text>
+<text x="1631.0" y="296.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+latitude: Double</text>
+<text x="1631.0" y="316.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+longitude: Double</text>
+<text x="1631.0" y="336.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+status: String</text>
+<text x="1631.0" y="356.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<rect x="1621.0" y="402.0" width="343.0" height="116.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1621.0" y="402.0" width="343.0" height="30.0" fill="#FBEDE8"/>
+<polyline points="1621.0,432.0 1964.0,432.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1792.5" y="422.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">IncidentReport</text>
+<text x="1631.0" y="446.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1631.0" y="466.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+incidentId: Long → Incident</text>
+<text x="1631.0" y="486.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+reportId: Long → Report</text>
+<text x="1631.0" y="506.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+linkedAt: DateTime</text>
+<rect x="2004.0" y="172.0" width="343.0" height="96.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="2004.0" y="172.0" width="343.0" height="30.0" fill="#FBEDE8"/>
+<polyline points="2004.0,202.0 2347.0,202.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2175.5" y="192.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">IncidentStatus</text>
+<text x="2014.0" y="216.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="2014.0" y="236.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+name: String</text>
+<text x="2014.0" y="256.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+description: String</text>
+<rect x="2004.0" y="302.0" width="343.0" height="156.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="2004.0" y="302.0" width="343.0" height="30.0" fill="#FBEDE8"/>
+<polyline points="2004.0,332.0 2347.0,332.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2175.5" y="322.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">IncidentPriority</text>
+<text x="2014.0" y="346.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="2014.0" y="366.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+incidentId: Long → Incident</text>
+<text x="2014.0" y="386.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+score: Double</text>
+<text x="2014.0" y="406.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+level: String</text>
+<text x="2014.0" y="426.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+justification: String</text>
+<text x="2014.0" y="446.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+calculatedAt: DateTime</text>
+<rect x="2004.0" y="492.0" width="343.0" height="136.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="2004.0" y="492.0" width="343.0" height="30.0" fill="#FBEDE8"/>
+<polyline points="2004.0,522.0 2347.0,522.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2175.5" y="512.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">IncidentHistory</text>
+<text x="2014.0" y="536.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="2014.0" y="556.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+incidentId: Long → Incident</text>
+<text x="2014.0" y="576.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+oldStatus: String</text>
+<text x="2014.0" y="596.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+newStatus: String</text>
+<text x="2014.0" y="616.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+changedAt: DateTime</text>
+<rect x="53.0" y="722.0" width="343.0" height="116.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="53.0" y="722.0" width="343.0" height="30.0" fill="#FCEBF1"/>
+<polyline points="53.0,752.0 396.0,752.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="224.5" y="742.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Municipality</text>
+<text x="63.0" y="766.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="63.0" y="786.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+name: String</text>
+<text x="63.0" y="806.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+city: String</text>
+<text x="63.0" y="826.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+address: String</text>
+<rect x="53.0" y="872.0" width="343.0" height="136.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="53.0" y="872.0" width="343.0" height="30.0" fill="#FCEBF1"/>
+<polyline points="53.0,902.0 396.0,902.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="224.5" y="892.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Department</text>
+<text x="63.0" y="916.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="63.0" y="936.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+municipalityId: Long → Municipality</text>
+<text x="63.0" y="956.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+name: String</text>
+<text x="63.0" y="976.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+description: String</text>
+<text x="63.0" y="996.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+managerId: Long → Employee</text>
+<rect x="53.0" y="1042.0" width="343.0" height="136.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="53.0" y="1042.0" width="343.0" height="30.0" fill="#FCEBF1"/>
+<polyline points="53.0,1072.0 396.0,1072.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="224.5" y="1062.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">DepartmentZone</text>
+<text x="63.0" y="1086.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="63.0" y="1106.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+departmentId: Long → Department</text>
+<text x="63.0" y="1126.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+zoneName: String</text>
+<text x="63.0" y="1146.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+latitude: Double</text>
+<text x="63.0" y="1166.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+longitude: Double</text>
+<rect x="436.0" y="722.0" width="343.0" height="136.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="436.0" y="722.0" width="343.0" height="30.0" fill="#FCEBF1"/>
+<polyline points="436.0,752.0 779.0,752.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="607.5" y="742.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Employee</text>
+<text x="446.0" y="766.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="446.0" y="786.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+departmentId: Long → Department</text>
+<text x="446.0" y="806.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="446.0" y="826.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+role: String</text>
+<text x="446.0" y="846.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+status: String</text>
+<rect x="436.0" y="892.0" width="343.0" height="96.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="436.0" y="892.0" width="343.0" height="30.0" fill="#FCEBF1"/>
+<polyline points="436.0,922.0 779.0,922.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="607.5" y="912.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">DepartmentCategory</text>
+<text x="446.0" y="936.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="446.0" y="956.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+departmentId: Long → Department</text>
+<text x="446.0" y="976.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+categoryId: Long → ReportCategory</text>
+<rect x="837.0" y="722.0" width="343.0" height="196.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="837.0" y="722.0" width="343.0" height="30.0" fill="#FAEDDA"/>
+<polyline points="837.0,752.0 1180.0,752.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1008.5" y="742.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Intervention</text>
+<text x="847.0" y="766.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="847.0" y="786.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+incidentId: Long → Incident</text>
+<text x="847.0" y="806.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+departmentId: Long → Department</text>
+<text x="847.0" y="826.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+title: String</text>
+<text x="847.0" y="846.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+description: String</text>
+<text x="847.0" y="866.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+status: String</text>
+<text x="847.0" y="886.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+plannedAt: DateTime</text>
+<text x="847.0" y="906.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+closedAt: DateTime</text>
+<rect x="837.0" y="952.0" width="343.0" height="136.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="837.0" y="952.0" width="343.0" height="30.0" fill="#FAEDDA"/>
+<polyline points="837.0,982.0 1180.0,982.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1008.5" y="972.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">InterventionTask</text>
+<text x="847.0" y="996.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="847.0" y="1016.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="847.0" y="1036.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+description: String</text>
+<text x="847.0" y="1056.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+status: String</text>
+<text x="847.0" y="1076.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+dueDate: DateTime</text>
+<rect x="837.0" y="1122.0" width="343.0" height="136.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="837.0" y="1122.0" width="343.0" height="30.0" fill="#FAEDDA"/>
+<polyline points="837.0,1152.0 1180.0,1152.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1008.5" y="1142.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">InterventionEvidence</text>
+<text x="847.0" y="1166.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="847.0" y="1186.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="847.0" y="1206.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+imageUrl: String</text>
+<text x="847.0" y="1226.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+description: String</text>
+<text x="847.0" y="1246.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<rect x="1220.0" y="722.0" width="343.0" height="116.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1220.0" y="722.0" width="343.0" height="30.0" fill="#FAEDDA"/>
+<polyline points="1220.0,752.0 1563.0,752.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1391.5" y="742.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">InterventionAssignment</text>
+<text x="1230.0" y="766.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1230.0" y="786.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="1230.0" y="806.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+employeeId: Long → Employee</text>
+<text x="1230.0" y="826.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+role: String</text>
+<rect x="1220.0" y="872.0" width="343.0" height="116.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1220.0" y="872.0" width="343.0" height="30.0" fill="#FAEDDA"/>
+<polyline points="1220.0,902.0 1563.0,902.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1391.5" y="892.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">InterventionResource</text>
+<text x="1230.0" y="916.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1230.0" y="936.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="1230.0" y="956.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+resourceId: Long → Resource</text>
+<text x="1230.0" y="976.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+quantity: Integer</text>
+<rect x="1220.0" y="1022.0" width="343.0" height="96.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1220.0" y="1022.0" width="343.0" height="30.0" fill="#FAEDDA"/>
+<polyline points="1220.0,1052.0 1563.0,1052.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1391.5" y="1042.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Resource</text>
+<text x="1230.0" y="1066.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1230.0" y="1086.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+type: String</text>
+<text x="1230.0" y="1106.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+name: String</text>
+<rect x="1621.0" y="722.0" width="343.0" height="116.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1621.0" y="722.0" width="343.0" height="30.0" fill="#E7F1FB"/>
+<polyline points="1621.0,752.0 1964.0,752.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1792.5" y="742.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Confirmation</text>
+<text x="1631.0" y="766.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1631.0" y="786.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="1631.0" y="806.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+incidentId: Long → Incident</text>
+<text x="1631.0" y="826.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+date: DateTime</text>
+<rect x="1621.0" y="872.0" width="343.0" height="136.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1621.0" y="872.0" width="343.0" height="30.0" fill="#E7F1FB"/>
+<polyline points="1621.0,902.0 1964.0,902.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1792.5" y="892.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Comment</text>
+<text x="1631.0" y="916.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1631.0" y="936.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="1631.0" y="956.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+incidentId: Long → Incident</text>
+<text x="1631.0" y="976.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+content: String</text>
+<text x="1631.0" y="996.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<rect x="1621.0" y="1042.0" width="343.0" height="136.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1621.0" y="1042.0" width="343.0" height="30.0" fill="#E7F1FB"/>
+<polyline points="1621.0,1072.0 1964.0,1072.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="1792.5" y="1062.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Complaint</text>
+<text x="1631.0" y="1086.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1631.0" y="1106.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="1631.0" y="1126.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="1631.0" y="1146.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+reason: String</text>
+<text x="1631.0" y="1166.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+status: String</text>
+<rect x="2004.0" y="722.0" width="343.0" height="116.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="2004.0" y="722.0" width="343.0" height="30.0" fill="#E7F1FB"/>
+<polyline points="2004.0,752.0 2347.0,752.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2175.5" y="742.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Subscription</text>
+<text x="2014.0" y="766.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="2014.0" y="786.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="2014.0" y="806.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+incidentId: Long → Incident</text>
+<text x="2014.0" y="826.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<rect x="2004.0" y="872.0" width="343.0" height="136.0" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="2004.0" y="872.0" width="343.0" height="30.0" fill="#E7F1FB"/>
+<polyline points="2004.0,902.0 2347.0,902.0" fill="none" stroke="#645F7C" stroke-width="1.0" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="2175.5" y="892.0" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#393939" text-anchor="middle">Feedback</text>
+<text x="2014.0" y="916.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="2014.0" y="936.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="2014.0" y="956.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#A63A3A" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="2014.0" y="976.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+rating: Integer</text>
+<text x="2014.0" y="996.0" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="start">+comment: String</text>
+<polyline points="224.5,388.0 224.5,422.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="224.5,388.0 218.5,394.5 224.5,401.0 230.5,394.5" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="396.0,280.0 436.0,220.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="433.6,231.6 436.0,220.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="426.2,226.7 436.0,220.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="396.0,327.5 416.0,327.5 416.0,360.0 436.0,360.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="396.0,327.5 402.5,333.5 409.0,327.5 402.5,321.5" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="1008.5,408.0 1008.5,442.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1008.5,408.0 1002.5,414.5 1008.5,421.0 1014.5,414.5" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="1180.0,290.0 1220.0,230.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1217.6,241.6 1220.0,230.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1210.2,236.7 1220.0,230.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1180.0,341.9 1200.0,341.9 1200.0,390.0 1220.0,390.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1180.0,341.9 1186.5,347.9 1193.0,341.9 1186.5,335.9" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="1792.5,368.0 1792.5,402.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1792.5,368.0 1786.5,374.5 1792.5,381.0 1798.5,374.5" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="1964.0,270.0 2004.0,220.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="2000.6,231.4 2004.0,220.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1993.6,225.8 2004.0,220.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1964.0,285.7 1978.0,285.7 1978.0,380.0 2004.0,380.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1993.0,384.5 2004.0,380.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1993.0,375.5 2004.0,380.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1964.0,324.9 1990.0,324.9 1990.0,560.0 2004.0,560.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1993.0,564.5 2004.0,560.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="1993.0,555.5 2004.0,560.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="224.5,838.0 224.5,872.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="224.5,838.0 218.5,844.5 224.5,851.0 230.5,844.5" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="224.5,1008.0 224.5,1042.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="224.5,1008.0 218.5,1014.5 224.5,1021.0 230.5,1014.5" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="396.0,926.4 408.0,926.4 408.0,790.0 436.0,790.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="396.0,926.4 402.5,932.4 409.0,926.4 402.5,920.4" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="396.0,978.1 424.0,978.1 424.0,940.0 436.0,940.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="396.0,978.1 402.5,984.1 409.0,978.1 402.5,972.1" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="1008.5,918.0 1008.5,952.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1008.5,918.0 1002.5,924.5 1008.5,931.0 1014.5,924.5" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="837.0,888.6 829.0,888.6 829.0,1190.0 837.0,1190.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="837.0,888.6 830.5,882.6 824.0,888.6 830.5,894.6" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="1180.0,820.0 1220.0,780.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1180.0,820.0 1188.8,819.6 1189.2,810.8 1180.4,811.2" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="1180.0,869.0 1200.0,869.0 1200.0,930.0 1220.0,930.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1180.0,869.0 1186.5,875.0 1193.0,869.0 1186.5,863.0" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<polyline points="1391.5,988.0 1391.5,1022.0" fill="none" stroke="#645F7C" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="1391.5,988.0 1385.5,994.5 1391.5,1001.0 1397.5,994.5" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+</svg>

@@ -111,3 +111,9 @@ intervention-service/
 ├── pom.xml
 └── README.md
 ```
+
+## 7. Class Diagram
+
+![Class diagram](../../Documentation/Diagrams/class-diagram-intervention-service.png)
+
+Full resolution: [class-diagram-intervention-service.svg](../../Documentation/Diagrams/class-diagram-intervention-service.svg)

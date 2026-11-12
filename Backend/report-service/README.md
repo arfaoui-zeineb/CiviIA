@@ -104,3 +104,9 @@ report-service/
 ├── pom.xml
 └── README.md
 ```
+
+## 7. Class Diagram
+
+![Class diagram](../../Documentation/Diagrams/class-diagram-report-service.png)
+
+Full resolution: [class-diagram-report-service.svg](../../Documentation/Diagrams/class-diagram-report-service.svg)
