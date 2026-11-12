@@ -110,3 +110,9 @@ incident-service/
 ├── pom.xml
 └── README.md
 ```
+
+## 7. Class Diagram
+
+![Class diagram](../../Documentation/Diagrams/class-diagram-incident-service.png)
+
+Full resolution: [class-diagram-incident-service.svg](../../Documentation/Diagrams/class-diagram-incident-service.svg)

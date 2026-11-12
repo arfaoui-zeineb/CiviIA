@@ -94,3 +94,9 @@ user-service/
 ├── pom.xml
 └── README.md
 ```
+
+## 7. Class Diagram
+
+![Class diagram](../../Documentation/Diagrams/class-diagram-user-service.png)
+
+Full resolution: [class-diagram-user-service.svg](../../Documentation/Diagrams/class-diagram-user-service.svg)
