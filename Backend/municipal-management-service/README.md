@@ -129,6 +129,7 @@ municipal-management-service/
 
 ## 7. Class Diagram
 
-![Class diagram](../../Documentation/Diagrams/class-diagram-municipal-management.png)
+![Class diagram](../../Documentation/Diagrams/class-diagram-municipal-management-service.png
+)
 
 Full resolution: [class-diagram-municipal-management.svg](../../Documentation/Diagrams/class-diagram-municipal-management.svg)
