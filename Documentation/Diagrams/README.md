@@ -3,12 +3,18 @@
 Diagrammes de classes des 6 microservices de la plateforme **CiviIA**, établis à partir de la
 spécification `CivicPulse — Architecture finale`.
 
-Tous les diagrammes partagent le même thème :
+Les six diagrammes par microservice partagent le même thème :
 
 - un en-tête pastel par microservice ;
 - les relations UML : composition (◆), agrégation (◇), association (→) ;
 - les attributs en **rouge** sont des références à une entité d'un autre service, par
   identifiant, sans clé étrangère inter-base.
+
+## Vue globale
+
+Diagramme de classes global de la plateforme, couvrant les 6 microservices (image fournie telle quelle, PNG 8191 × 4404).
+
+![Diagramme de classes global](class-diagram-global.png)
 
 ## Diagrammes par microservice
 
