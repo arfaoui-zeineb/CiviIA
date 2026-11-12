@@ -10,6 +10,7 @@ It provides REST APIs to create, retrieve, update and delete municipal informati
 
 - Manage municipalities.
 - Manage departments within each municipality.
+- Assign problem categories to departments.
 - Maintain relationships between municipalities and departments.
 - Provide municipal information to other microservices.
 
@@ -35,6 +36,15 @@ Suggested attributes:
 - name
 - description
 - municipalityId
+- managerId
+
+### DepartmentCategory
+Represents the link between a department and a problem category it is responsible for.
+
+Suggested attributes:
+- id
+- departmentId
+- categoryId
 
 ## 4. Technologies
 
@@ -65,8 +75,16 @@ Suggested attributes:
 | PUT | `/api/departments/{id}` | Update department |
 | DELETE | `/api/departments/{id}` | Delete department |
 
+### Department Category
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/departments/{id}/categories` | Get categories assigned to a department |
+| POST | `/api/departments/{id}/categories` | Assign a category to a department |
+| DELETE | `/api/departments/{id}/categories/{categoryId}` | Remove a category from a department |
+
 ## 6. Project Structure
 
+```
 municipal-management-service/
 ├── src/
 │   └── main/
@@ -76,3 +94,8 @@ municipal-management-service/
 └── README.md
 ```
 
+## 7. Class Diagram
+
+![Class diagram](../../Documentation/Diagrams/class-diagram-municipal-management.png)
+
+Full resolution: [class-diagram-municipal-management.svg](../../Documentation/Diagrams/class-diagram-municipal-management.svg)
