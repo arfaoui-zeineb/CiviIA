@@ -30,20 +30,20 @@ Represents an administrative department belonging to a municipality.
 
 Suggested attributes:
 - id
-- name
-- city
-- address
-
-### Department
-Represents an administrative department belonging to a municipality.
-
-Suggested attributes:
-- id
 - municipalityId
 - name
 - description
-- municipalityId
 - managerId
+
+### Employee
+Represents a municipal employee attached to a department.
+
+Suggested attributes:
+- id
+- departmentId
+- userId
+- role
+- status
 
 ### DepartmentCategory
 Represents the link between a department and a problem category it is responsible for.
@@ -52,6 +52,20 @@ Suggested attributes:
 - id
 - departmentId
 - categoryId
+
+### DepartmentZone
+Represents a geographic area under the responsibility of a department.
+
+Suggested attributes:
+- id
+- departmentId
+- zoneName
+- latitude
+- longitude
+
+Cross-service references are kept as external identifiers, without any inter-database foreign key:
+- `Employee.userId` → User Service
+- `DepartmentCategory.categoryId` → Report Service (`ReportCategory`)
 
 ## 4. Technologies
 
@@ -108,7 +122,7 @@ Suggested attributes:
 | PUT | `/api/department-zones/{id}` | Update a responsibility zone |
 | DELETE | `/api/department-zones/{id}` | Delete a responsibility zone |
 
-### Department Category
+### Department Category (nested routes)
 | Method | Endpoint | Description |
 |---|---|---|
 | GET | `/api/departments/{id}/categories` | Get categories assigned to a department |
@@ -129,6 +143,6 @@ municipal-management-service/
 
 ## 7. Class Diagram
 
-![Class diagram](../../Documentation/Diagrams/class-diagram-municipal-management.png)
+![Class diagram](../../Documentation/Diagrams/class-diagram-municipal-management-service.png)
 
-Full resolution: [class-diagram-municipal-management.svg](../../Documentation/Diagrams/class-diagram-municipal-management.svg)
+Full resolution: [class-diagram-municipal-management-service.svg](../../Documentation/Diagrams/class-diagram-municipal-management-service.svg)
