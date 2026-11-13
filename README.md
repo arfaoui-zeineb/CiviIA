@@ -46,7 +46,7 @@ Chaque service est documenté dans le README de son dossier.
 
 Chaque service possède ses propres entités et sa propre base de données. Les références entre services (flèches `→`) se font par identifiant, sans clé étrangère inter-base.
 
-![Diagramme de classes global](Documentation/Diagrams/class-diagram-global.png)
+![Diagramme de classes global](Documentation/Diagrams/CiviAI_Diagramme_Classes_Global.png)
 
 ## Communication entre services
 
