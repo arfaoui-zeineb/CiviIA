@@ -2,7 +2,7 @@
 
 **Plateforme intelligente de signalement et de gestion des problèmes urbains, propulsée par l'intelligence artificielle.**
 
-CiviAI connecte l'alerte citoyenne à l'action municipale : les citoyens signalent un problème (route endommagée, éclairage en panne, fuite d'eau, déchets), l'IA regroupe et classe les signalements, et la municipalité intervient. Le projet est réalisé par l'équipe **InnovaSix** et repose sur **6 microservices**.
+CiviAI connecte l'alerte citoyenne à l'action municipale : les citoyens signalent un problème (route endommagée, éclairage en panne, fuite d'eau, déchets), l'IA regroupe et classe les signalements, et la municipalité intervient. Le projet est réalisé par l'équipe **InnovaSix** et repose sur **7 microservices**.
 
 ## Vision
 
@@ -25,11 +25,11 @@ Le système s'organise en cinq couches autonomes :
 
 1. **Présentation** : application citoyenne et dashboard municipal.
 2. **Entrée API** : API Gateway centralisée (routage et sécurité JWT).
-3. **Services métier** : 6 microservices Spring Boot.
+3. **Services métier** : 7 microservices Spring Boot.
 4. **Messagerie** : bus d'événements RabbitMQ.
 5. **Persistance** : une base MySQL par microservice.
 
-## Les 6 microservices
+## Les 7 microservices
 
 | Service | Rôle | Responsable |
 |---|---|---|
@@ -39,6 +39,7 @@ Le système s'organise en cinq couches autonomes :
 | Resource & Logistics | Équipes, ressources matérielles et réservations | Zeineb Arfaoui |
 | Intervention Service | Planification et suivi des travaux | Yessine Eleuch |
 | Citizen Engagement | Confirmations, commentaires et évaluations | Amen Allah Abdelhafidh |
+| Urban Insights & Prediction | Modèles ML, prédictions et alertes | À attribuer |
 
 Chaque service est documenté dans le README de son dossier.
 
@@ -64,7 +65,7 @@ Les services échangent par **API REST** pour les réponses immédiates et par *
 
 ## Feuille de route
 
-1. **Phase 1 · Socle métier** : les six services CRUD avec leurs règles métier.
+1. **Phase 1 · Socle métier** : les sept services CRUD avec leurs règles métier.
 2. **Phase 2 · Intégration** : API Gateway, sécurité JWT et bus RabbitMQ.
 3. **Phase 3 · Intelligence** : module IA de classification, cartes thermiques et maintenance prédictive.
 

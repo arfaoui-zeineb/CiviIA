@@ -1,9 +1,9 @@
 # Diagrammes de classes — CiviIA
 
-Diagrammes de classes des 6 microservices de la plateforme **CiviIA**, établis à partir de la
+Diagrammes de classes des 7 microservices de la plateforme **CiviIA**, établis à partir de la
 spécification `CivicPulse — Architecture finale`.
 
-Les six diagrammes par microservice partagent le même thème :
+Les sept diagrammes par microservice partagent le même thème :
 
 - un en-tête pastel par microservice ;
 - les relations UML : composition (◆), agrégation (◇), association (→) ;
@@ -12,7 +12,7 @@ Les six diagrammes par microservice partagent le même thème :
 
 ## Vue globale
 
-Diagramme de classes global de la plateforme, couvrant les 6 microservices et le paquet `external` (identité fournie par Keycloak).
+Diagramme de classes global de la plateforme, couvrant les 7 microservices et le paquet `external` (identité fournie par Keycloak).
 
 ![Diagramme de classes global](class-diagram-global.png)
 
@@ -26,6 +26,7 @@ Diagramme de classes global de la plateforme, couvrant les 6 microservices et le
 | Resource & Logistics Service | 3 | [PNG](class-diagram-resource-logistics-service.png) · [SVG](class-diagram-resource-logistics-service.svg) |
 | Intervention Service | 6 | [PNG](class-diagram-intervention-service.png) · [SVG](class-diagram-intervention-service.svg) |
 | Citizen Engagement Service | 5 | [PNG](class-diagram-citizen-engagement-service.png) · [SVG](class-diagram-citizen-engagement-service.svg) |
+| Urban Insights & Prediction Service | 7 | [PNG](class-diagram-urban-insights-prediction-service.png) · [SVG](class-diagram-urban-insights-prediction-service.svg) |
 
 Le service Intervention comporte 6 classes : les 5 entités du PDF, plus `Resource`
 (référencée par `InterventionResource.resourceId`).
@@ -65,3 +66,9 @@ Domaine : planification, affectations et travaux.
 Domaine : confirmations, commentaires et évaluations.
 
 ![Citizen Engagement Service](class-diagram-citizen-engagement-service.png)
+
+## 7. Urban Insights & Prediction Service
+
+Domaine : modèles ML, prédictions, hotspots, alertes et indicateurs.
+
+![Urban Insights & Prediction Service](class-diagram-urban-insights-prediction-service.png)
