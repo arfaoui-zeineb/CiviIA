@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.civia</groupId>
-	<artifactId>municipal-management-service</artifactId>
+	<artifactId>resource-logistics-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>municipal-management-service</name>
-	<description>municipal-management-service</description>
+	<name>resource-logistics-service</name>
+	<description>resource-logistics-service</description>
 	<url/>
 	<licenses>
 		<license/>

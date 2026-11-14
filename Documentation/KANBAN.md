@@ -16,7 +16,7 @@ issues GitHub et mis à jour à chaque séance.
 
 | Backlog | À faire | En cours | Review | Done |
 |---|---|---|---|---|
-| `P2` Classification IA des signalements (Molka)<br>`P2` Détection de doublons GPS + sémantique (Molka)<br>`P2` Recalcul de priorité des incidents (Molka)<br>`P3` Cartes thermiques par quartier (Youssef)<br>`P3` Maintenance prédictive (Molka)<br>`P3` Notifications citoyens (Amen)<br>`P3` Tableau de bord décideurs (Zeineb) | `P1` CRUD complets des 6 services (tous)<br>`P1` Tests unitaires et d'intégration (tous)<br>`P1` Docker Compose + gateway (Amen)<br>`P2` CI GitHub Actions : build + tests<br>`P2` Lien du dépôt Git dans la présentation<br>`P2` Uniformiser CiviAI / CiviIA | `P1` Contrats d'API OpenAPI/Swagger (tous)<br>`P1` Authentification JWT + rôles (Safa)<br>`P1` Bus RabbitMQ : Incident → Municipal → Intervention (Molka, Amen)<br>`P2` Routage catégorie + zone (Zeineb) | `P1` README municipal : entités + liens (Zeineb)<br>`P1` Cohérence READMEs / diagrammes (tous)<br>`P2` Slide 13 : `DepartmentCategory` ajoutée (Zeineb)<br>`P2` Slide 12 : ajouter `IncidentPriority` (Molka)<br>`P2` Lien du diagramme global dans la présentation (Zeineb) | Monorepo + 6 services initialisés<br>Incident Service (PR #3)<br>Municipal Management Service (squelette)<br>Diagrammes de classes par microservice (6)<br>Diagramme de classes global<br>READMEs des 6 services<br>Présentation séance 4 (24 slides) |
+| `P2` Classification IA des signalements (Molka)<br>`P2` Détection de doublons GPS + sémantique (Molka)<br>`P2` Recalcul de priorité des incidents (Molka)<br>`P3` Cartes thermiques par quartier (Youssef)<br>`P3` Maintenance prédictive (Molka)<br>`P3` Notifications citoyens (Amen)<br>`P3` Tableau de bord décideurs (Zeineb) | `P1` CRUD complets des 6 services (tous)<br>`P1` Tests unitaires et d'intégration (tous)<br>`P1` Docker Compose + gateway (Amen)<br>`P2` CI GitHub Actions : build + tests<br>`P2` Lien du dépôt Git dans la présentation<br>`P2` Uniformiser CiviAI / CiviIA | `P1` Contrats d'API OpenAPI/Swagger (tous)<br>`P1` Authentification JWT + rôles (Safa)<br>`P1` Bus RabbitMQ : Incident → Municipal → Intervention (Molka, Amen)<br>`P2` Réservation des ressources (Zeineb) | `P1` README Resource & Logistics : entités + liens (Zeineb)<br>`P1` Cohérence READMEs / diagrammes (tous)<br>`P2` Slide 13 : aligner sur le nouveau module (Zeineb)<br>`P2` Slide 12 : ajouter `IncidentPriority` (Molka)<br>`P2` Lien du diagramme global dans la présentation (Zeineb) | Monorepo + 6 services initialisés<br>Incident Service (PR #3)<br>Resource & Logistics Service (squelette)<br>Diagrammes de classes par microservice (6)<br>Diagramme de classes global<br>READMEs des 6 services<br>Présentation séance 4 (24 slides) |
 
 ## Détail par service
 
@@ -39,14 +39,12 @@ issues GitHub et mis à jour à chaque séance.
 - [ ] Regroupement et détection de doublons (GPS + sémantique)
 - [ ] Calcul et recalcul de priorité
 
-### Municipal Management Service — Zeineb
+### Resource & Logistics Service — Zeineb
 - [x] Squelette du service + README
-- [x] Documentation des 5 entités : `Municipality`, `Department`, `Employee`,
-      `DepartmentCategory`, `DepartmentZone`
-- [x] Diagramme de classes du service
+- [x] Diagramme de classes du service : `Team`, `Resource`, `ResourceReservation` + 4 énumérations
 - [ ] Création des entités JPA et des repositories
-- [ ] CRUD des 5 entités
-- [ ] Routage catégorie + zone vers le département compétent
+- [ ] CRUD des 3 entités
+- [ ] Disponibilité et réservation des ressources (chevauchement refusé)
 
 ### Intervention Service — Yessine
 - [x] Squelette du service + README

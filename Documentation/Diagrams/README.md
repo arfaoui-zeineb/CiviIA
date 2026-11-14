@@ -23,7 +23,7 @@ Diagramme de classes global de la plateforme, couvrant les 6 microservices (imag
 | User Service | 4 | [PNG](class-diagram-user-service.png) · [SVG](class-diagram-user-service.svg) |
 | Report Service | 4 | [PNG](class-diagram-report-service.png) · [SVG](class-diagram-report-service.svg) |
 | Incident Service | 5 | [PNG](class-diagram-incident-service.png) · [SVG](class-diagram-incident-service.svg) |
-| Municipal Management Service | 5 | [PNG](class-diagram-municipal-management-service.png) · [SVG](class-diagram-municipal-management-service.svg) |
+| Resource & Logistics Service | 3 | [PNG](class-diagram-resource-logistics-service.png) · [SVG](class-diagram-resource-logistics-service.svg) |
 | Intervention Service | 6 | [PNG](class-diagram-intervention-service.png) · [SVG](class-diagram-intervention-service.svg) |
 | Citizen Engagement Service | 5 | [PNG](class-diagram-citizen-engagement-service.png) · [SVG](class-diagram-citizen-engagement-service.svg) |
 
@@ -48,11 +48,11 @@ Domaine : regroupement, doublons et priorité.
 
 ![Incident Service](class-diagram-incident-service.png)
 
-## 4. Municipal Management Service
+## 4. Resource & Logistics Service
 
-Domaine : municipalités, départements et agents.
+Domaine : équipes, ressources matérielles et réservations.
 
-![Municipal Management Service](class-diagram-municipal-management-service.png)
+![Resource & Logistics Service](class-diagram-resource-logistics-service.png)
 
 ## 5. Intervention Service
 

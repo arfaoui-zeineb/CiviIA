@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="1040" viewBox="0 0 1160 1040">
+<rect width="1160" height="1040" fill="#FFFFFF"/>
+<text x="580" y="58" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600" fill="#393939" text-anchor="middle">CiviIA — Resource &amp; Logistics Service</text>
+<text x="580" y="92" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#393939" text-anchor="middle">Diagramme de classes · 3 entités · 2 relations</text>
+<polygon points="177.5,122 184,128 190.5,122 184,116" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<text x="200.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">composition</text>
+<polygon points="313.5,122 320,128 326.5,122 320,116" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<text x="336.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">agrégation</text>
+<line x1="438.5" y1="122" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<line x1="443.5" y1="126.5" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<line x1="443.5" y1="117.5" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<text x="461.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">association</text>
+<text x="564.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#A63A3A" text-anchor="start">Entité (rouge) = référence par identifiant entre services</text>
+<rect x="60" y="152" width="1040" height="560" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="60" y="152" width="1040" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="60" y1="208" x2="1100" y2="208" stroke="#645F7C" stroke-width="1.0"/>
+<text x="580" y="186" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Équipes, ressources et réservations</text>
+<rect x="90" y="224" width="440" height="202" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="90" y="224" width="440" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="90" y1="258" x2="530" y2="258" stroke="#645F7C" stroke-width="1.0"/>
+<text x="310.0" y="247.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Team</text>
+<text x="102" y="282" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="102" y="305" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+name: String</text>
+<text x="102" y="328" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+specialty: String</text>
+<text x="102" y="351" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+zone: String</text>
+<text x="102" y="374" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: TeamStatus</text>
+<line x1="90" y1="390" x2="530" y2="390" stroke="#645F7C" stroke-width="1.0"/>
+<text x="102" y="412" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+isAvailable(): boolean</text>
+<rect x="90" y="440" width="440" height="225" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="90" y="440" width="440" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="90" y1="474" x2="530" y2="474" stroke="#645F7C" stroke-width="1.0"/>
+<text x="310.0" y="463.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Resource</text>
+<text x="102" y="498" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="102" y="521" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+name: String</text>
+<text x="102" y="544" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+type: ResourceType</text>
+<text x="102" y="567" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: ResourceStatus</text>
+<text x="102" y="590" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+location: String</text>
+<line x1="90" y1="606" x2="530" y2="606" stroke="#645F7C" stroke-width="1.0"/>
+<text x="102" y="628" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+isAvailable(): boolean</text>
+<text x="102" y="651" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+changeStatus(): void</text>
+<rect x="630" y="300" width="440" height="294" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="630" y="300" width="440" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="630" y1="334" x2="1070" y2="334" stroke="#645F7C" stroke-width="1.0"/>
+<text x="850.0" y="323.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">ResourceReservation</text>
+<text x="642" y="358" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="642" y="381" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+resourceId: Long → Resource</text>
+<text x="642" y="404" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+teamId: Long → Team</text>
+<text x="642" y="427" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="642" y="450" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+startDateTime: LocalDateTime</text>
+<text x="642" y="473" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+endDateTime: LocalDateTime</text>
+<text x="642" y="496" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: ReservationStatus</text>
+<line x1="630" y1="512" x2="1070" y2="512" stroke="#645F7C" stroke-width="1.0"/>
+<text x="642" y="534" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+reserve(): void</text>
+<text x="642" y="557" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+cancel(): void</text>
+<text x="642" y="580" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+checkAvailability(): boolean</text>
+<line x1="530" y1="320" x2="630" y2="400" stroke="#645F7C" stroke-width="1.4"/>
+<line x1="530" y1="555" x2="630" y2="480" stroke="#645F7C" stroke-width="1.4"/>
+<text x="538" y="330" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">1</text>
+<text x="596" y="392" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<text x="538" y="566" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">1</text>
+<text x="596" y="492" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<rect x="60" y="732" width="1040" height="240" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="60" y="732" width="1040" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="60" y1="788" x2="1100" y2="788" stroke="#645F7C" stroke-width="1.0"/>
+<text x="580" y="766" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Énumérations</text>
+<rect x="90" y="800" width="230" height="84" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="90" y="800" width="230" height="48" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="90" y1="848" x2="320" y2="848" stroke="#645F7C" stroke-width="1.0"/>
+<text x="205.0" y="820" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="middle">«enumeration»</text>
+<text x="205.0" y="839" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">TeamStatus</text>
+<text x="102" y="870" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">(valeurs à confirmer)</text>
+<rect x="340" y="800" width="230" height="128" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="340" y="800" width="230" height="48" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="340" y1="848" x2="570" y2="848" stroke="#645F7C" stroke-width="1.0"/>
+<text x="455.0" y="820" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="middle">«enumeration»</text>
+<text x="455.0" y="839" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">ResourceType</text>
+<text x="352" y="870" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">VEHICLE</text>
+<text x="352" y="892" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">EQUIPMENT</text>
+<text x="352" y="914" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">TOOL</text>
+<rect x="590" y="800" width="230" height="150" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="590" y="800" width="230" height="48" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="590" y1="848" x2="820" y2="848" stroke="#645F7C" stroke-width="1.0"/>
+<text x="705.0" y="820" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="middle">«enumeration»</text>
+<text x="705.0" y="839" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">ResourceStatus</text>
+<text x="602" y="870" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">AVAILABLE</text>
+<text x="602" y="892" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">RESERVED</text>
+<text x="602" y="914" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">IN_USE</text>
+<text x="602" y="936" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">MAINTENANCE</text>
+<rect x="840" y="800" width="230" height="150" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="840" y="800" width="230" height="48" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="840" y1="848" x2="1070" y2="848" stroke="#645F7C" stroke-width="1.0"/>
+<text x="955.0" y="820" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="middle">«enumeration»</text>
+<text x="955.0" y="839" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">ReservationStatus</text>
+<text x="852" y="870" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">PENDING</text>
+<text x="852" y="892" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">CONFIRMED</text>
+<text x="852" y="914" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">CANCELLED</text>
+<text x="852" y="936" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">COMPLETED</text>
+<line x1="90" y1="990" x2="1070" y2="990" stroke="#645F7C" stroke-width="0.9"/>
+<text x="90" y="1015" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">Références interservices : </text>
+<text x="265" y="1015" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#A63A3A" text-anchor="start">Intervention (interventionId)</text>
+<text x="455" y="1015" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">· vérifiée par REST à la réservation (R8)</text>
+</svg>

@@ -1,10 +1,10 @@
-package com.civia.municipalmanagementservice;
+package com.civia.resourcelogisticsservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class MunicipalManagementServiceApplicationTests {
+class ResourceLogisticsServiceApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,13 +1,13 @@
-package com.civia.municipalmanagementservice;
+package com.civia.resourcelogisticsservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class MunicipalManagementServiceApplication {
+public class ResourceLogisticsServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(MunicipalManagementServiceApplication.class, args);
+		SpringApplication.run(ResourceLogisticsServiceApplication.class, args);
 	}
 
 }
