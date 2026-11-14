@@ -20,9 +20,9 @@ Diagramme de classes global de la plateforme, couvrant les 6 microservices (imag
 
 | Microservice | Entités | Diagramme |
 |---|---|---|
-| User Service | 4 | [PNG](class-diagram-user-service.png) · [SVG](class-diagram-user-service.svg) |
+| Infrastructure Service | 2 | [PNG](class-diagram-infrastructure-service.png) · [SVG](class-diagram-infrastructure-service.svg) |
 | Report Service | 4 | [PNG](class-diagram-report-service.png) · [SVG](class-diagram-report-service.svg) |
-| Incident Service | 5 | [PNG](class-diagram-incident-service.png) · [SVG](class-diagram-incident-service.svg) |
+| Municipal Communication & Events Service | 6 | [PNG](class-diagram-municipal-communication-events-service.png) · [SVG](class-diagram-municipal-communication-events-service.svg) |
 | Resource & Logistics Service | 3 | [PNG](class-diagram-resource-logistics-service.png) · [SVG](class-diagram-resource-logistics-service.svg) |
 | Intervention Service | 6 | [PNG](class-diagram-intervention-service.png) · [SVG](class-diagram-intervention-service.svg) |
 | Citizen Engagement Service | 5 | [PNG](class-diagram-citizen-engagement-service.png) · [SVG](class-diagram-citizen-engagement-service.svg) |
@@ -30,11 +30,11 @@ Diagramme de classes global de la plateforme, couvrant les 6 microservices (imag
 Le service Intervention comporte 6 classes : les 5 entités du PDF, plus `Resource`
 (référencée par `InterventionResource.resourceId`).
 
-## 1. User Service
+## 1. Infrastructure Service
 
-Domaine : identité — comptes, profils, rôles et accès.
+Domaine : parc d'équipements urbains et carnet d'entretien.
 
-![User Service](class-diagram-user-service.png)
+![Infrastructure Service](class-diagram-infrastructure-service.png)
 
 ## 2. Report Service
 
@@ -42,11 +42,11 @@ Domaine : signalements, photos et catégories.
 
 ![Report Service](class-diagram-report-service.png)
 
-## 3. Incident Service
+## 3. Municipal Communication & Events Service
 
-Domaine : regroupement, doublons et priorité.
+Domaine : annonces officielles, événements et inscriptions.
 
-![Incident Service](class-diagram-incident-service.png)
+![Municipal Communication & Events Service](class-diagram-municipal-communication-events-service.png)
 
 ## 4. Resource & Logistics Service
 

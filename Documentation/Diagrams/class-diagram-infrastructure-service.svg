@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="825" viewBox="0 0 1160 825">
+<rect width="1160" height="825" fill="#FFFFFF"/>
+<text x="580" y="58" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600" fill="#393939" text-anchor="middle">CiviIA — Infrastructure Service</text>
+<text x="580" y="92" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#393939" text-anchor="middle">Diagramme de classes · 2 entités · 1 relation</text>
+<polygon points="177.5,122 184,128 190.5,122 184,116" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<text x="200.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">composition</text>
+<polygon points="313.5,122 320,128 326.5,122 320,116" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<text x="336.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">agrégation</text>
+<line x1="438.5" y1="122" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<line x1="443.5" y1="126.5" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<line x1="443.5" y1="117.5" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<text x="461.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">association</text>
+<text x="564.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#A63A3A" text-anchor="start">Entité (rouge) = référence par identifiant entre services</text>
+<rect x="60" y="152" width="1040" height="336" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="60" y="152" width="1040" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="60" y1="208" x2="1100" y2="208" stroke="#645F7C" stroke-width="1.0"/>
+<text x="580" y="186" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Équipements et carnet d'entretien</text>
+<rect x="90" y="224" width="440" height="234" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="90" y="224" width="440" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="90" y1="258" x2="530" y2="258" stroke="#645F7C" stroke-width="1.0"/>
+<text x="310.0" y="247.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Equipment</text>
+<text x="102" y="282" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="102" y="305" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+reference: String</text>
+<text x="102" y="328" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+type: EquipmentType</text>
+<text x="102" y="351" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+zone: String</text>
+<text x="102" y="374" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+latitude: Double</text>
+<text x="102" y="397" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+longitude: Double</text>
+<text x="102" y="420" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: EquipmentStatus</text>
+<text x="102" y="443" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+installationDate: Date</text>
+<rect x="630" y="224" width="440" height="188" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="630" y="224" width="440" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="630" y1="258" x2="1070" y2="258" stroke="#645F7C" stroke-width="1.0"/>
+<text x="850.0" y="247.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">MaintenanceRecord</text>
+<text x="642" y="282" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="642" y="305" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+equipmentId: Long → Equipment</text>
+<text x="642" y="328" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="642" y="351" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+date: Date</text>
+<text x="642" y="374" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+description: Text</text>
+<text x="642" y="397" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+cost: Double</text>
+<line x1="530" y1="300" x2="630" y2="300" stroke="#645F7C" stroke-width="1.4"/>
+<text x="540" y="294" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">1</text>
+<text x="600" y="294" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<rect x="60" y="508" width="1040" height="240" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="60" y="508" width="1040" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="60" y1="564" x2="1100" y2="564" stroke="#645F7C" stroke-width="1.0"/>
+<text x="580" y="542" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Énumérations</text>
+<rect x="340" y="576" width="230" height="84" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="340" y="576" width="230" height="48" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="340" y1="624" x2="570" y2="624" stroke="#645F7C" stroke-width="1.0"/>
+<text x="455.0" y="596" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="middle">«enumeration»</text>
+<text x="455.0" y="615" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">EquipmentType</text>
+<text x="352" y="646" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">(valeurs à confirmer)</text>
+<rect x="590" y="576" width="230" height="84" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="590" y="576" width="230" height="48" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="590" y1="624" x2="820" y2="624" stroke="#645F7C" stroke-width="1.0"/>
+<text x="705.0" y="596" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="middle">«enumeration»</text>
+<text x="705.0" y="615" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">EquipmentStatus</text>
+<text x="602" y="646" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">(valeurs à confirmer)</text>
+<line x1="90" y1="775" x2="1070" y2="775" stroke="#645F7C" stroke-width="0.9"/>
+<text x="90" y="800" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">Références interservices : </text>
+<text x="241" y="800" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#A63A3A" text-anchor="start">Intervention (interventionId)</text>
+<text x="410" y="800" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">· référencé par Report (equipmentId)</text>
+</svg>
