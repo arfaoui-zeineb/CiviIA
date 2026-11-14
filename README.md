@@ -33,10 +33,10 @@ Le système s'organise en cinq couches autonomes :
 
 | Service | Rôle | Responsable |
 |---|---|---|
-| User Service | Identité, comptes, rôles et sécurité | Safa Banattia |
+| Infrastructure Service | Parc d'équipements urbains et carnet d'entretien | Safa Banattia |
 | Report Service | Collecte des signalements, photos et cartes | Youssef Saaidi |
-| Incident Service | Regroupement des signalements et priorité | Molka Jebali |
-| Municipal Management | Municipalités, départements et routage | Zeineb Arfaoui |
+| Municipal Communication & Events | Annonces officielles, événements et inscriptions | Molka Jebali |
+| Resource & Logistics | Équipes, ressources matérielles et réservations | Zeineb Arfaoui |
 | Intervention Service | Planification et suivi des travaux | Yessine Eleuch |
 | Citizen Engagement | Confirmations, commentaires et évaluations | Amen Allah Abdelhafidh |
 
