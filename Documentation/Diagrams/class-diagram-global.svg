@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1620" height="2421" viewBox="0 0 1620 2421">
+<rect width="1620" height="2421" fill="#FFFFFF"/>
+<text x="810.0" y="58" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600" fill="#393939" text-anchor="middle">CiviIA — Diagramme de classes global</text>
+<text x="810.0" y="92" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#393939" text-anchor="middle">6 microservices · 26 entités · paquet external (Keycloak)</text>
+<polygon points="177.5,122 184,128 190.5,122 184,116" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<text x="200.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">composition</text>
+<polygon points="313.5,122 320,128 326.5,122 320,116" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<text x="336.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">agrégation</text>
+<line x1="438.5" y1="126" x2="454.5" y2="126" stroke="#645F7C" stroke-width="1.4"/>
+<line x1="443.5" y1="130.5" x2="454.5" y2="126" stroke="#645F7C" stroke-width="1.4"/>
+<line x1="443.5" y1="121.5" x2="454.5" y2="126" stroke="#645F7C" stroke-width="1.4"/>
+<text x="461.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">association</text>
+<text x="564.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#A63A3A" text-anchor="start">Entité (rouge) = référence par identifiant entre services</text>
+<rect x="60" y="165" width="460" height="1470" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="60" y="165" width="460" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="60" y1="221" x2="520" y2="221" stroke="#645F7C" stroke-width="1.0"/>
+<text x="290.0" y="200.0" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Municipal Communication &amp; Events</text>
+<rect x="80" y="237" width="420" height="142" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="80" y="237" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="80" y1="271" x2="500" y2="271" stroke="#645F7C" stroke-width="1.0"/>
+<text x="290.0" y="260.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Category</text>
+<text x="92" y="295" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="92" y="318" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+name: String</text>
+<text x="92" y="341" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+description: Text</text>
+<text x="92" y="364" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+active: boolean</text>
+<rect x="80" y="393" width="420" height="280" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="80" y="393" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="80" y1="427" x2="500" y2="427" stroke="#645F7C" stroke-width="1.0"/>
+<text x="290.0" y="416.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Announcement</text>
+<text x="92" y="451" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="92" y="474" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+categoryId: Long → Category</text>
+<text x="92" y="497" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+departmentId: Long → Department</text>
+<text x="92" y="520" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+eventId: Long → Event</text>
+<text x="92" y="543" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+title: String</text>
+<text x="92" y="566" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+content: Text</text>
+<text x="92" y="589" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: AnnouncementStatus</text>
+<text x="92" y="612" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+priority: AnnouncementPriority</text>
+<text x="92" y="635" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+publishedAt: DateTime</text>
+<text x="92" y="658" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+expiresAt: DateTime</text>
+<rect x="80" y="687" width="420" height="211" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="80" y="687" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="80" y1="721" x2="500" y2="721" stroke="#645F7C" stroke-width="1.0"/>
+<text x="290.0" y="710.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Attachment</text>
+<text x="92" y="745" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="92" y="768" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+announcementId: Long → Announcement</text>
+<text x="92" y="791" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+fileName: String</text>
+<text x="92" y="814" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+fileUrl: String</text>
+<text x="92" y="837" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+type: String</text>
+<text x="92" y="860" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+sizeBytes: Long</text>
+<text x="92" y="883" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+uploadedAt: DateTime</text>
+<rect x="80" y="912" width="420" height="303" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="80" y="912" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="80" y1="946" x2="500" y2="946" stroke="#645F7C" stroke-width="1.0"/>
+<text x="290.0" y="935.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Event</text>
+<text x="92" y="970" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="92" y="993" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+categoryId: Long → Category</text>
+<text x="92" y="1016" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+venueId: Long → Venue</text>
+<text x="92" y="1039" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+departmentId: Long → Department</text>
+<text x="92" y="1062" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+title: String</text>
+<text x="92" y="1085" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+description: Text</text>
+<text x="92" y="1108" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+startDate: DateTime</text>
+<text x="92" y="1131" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+endDate: DateTime</text>
+<text x="92" y="1154" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+capacity: int</text>
+<text x="92" y="1177" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+registeredCount: int</text>
+<text x="92" y="1200" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: EventStatus</text>
+<rect x="80" y="1229" width="420" height="188" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="80" y="1229" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="80" y1="1263" x2="500" y2="1263" stroke="#645F7C" stroke-width="1.0"/>
+<text x="290.0" y="1252.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Venue</text>
+<text x="92" y="1287" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="92" y="1310" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+name: String</text>
+<text x="92" y="1333" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+address: String</text>
+<text x="92" y="1356" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+latitude: Double</text>
+<text x="92" y="1379" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+longitude: Double</text>
+<text x="92" y="1402" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+capacity: int</text>
+<rect x="80" y="1431" width="420" height="188" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="80" y="1431" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="80" y1="1465" x2="500" y2="1465" stroke="#645F7C" stroke-width="1.0"/>
+<text x="290.0" y="1454.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">EventRegistration</text>
+<text x="92" y="1489" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="92" y="1512" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+eventId: Long → Event</text>
+<text x="92" y="1535" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="92" y="1558" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: String</text>
+<text x="92" y="1581" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+registeredAt: DateTime</text>
+<text x="92" y="1604" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+cancelledAt: DateTime</text>
+<rect x="60" y="1675" width="460" height="524" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="60" y="1675" width="460" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="60" y1="1731" x2="520" y2="1731" stroke="#645F7C" stroke-width="1.0"/>
+<text x="290.0" y="1710.0" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Infrastructure Service</text>
+<rect x="80" y="1747" width="420" height="234" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="80" y="1747" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="80" y1="1781" x2="500" y2="1781" stroke="#645F7C" stroke-width="1.0"/>
+<text x="290.0" y="1770.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Equipment</text>
+<text x="92" y="1805" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="92" y="1828" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+reference: String</text>
+<text x="92" y="1851" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+type: EquipmentType</text>
+<text x="92" y="1874" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+zone: String</text>
+<text x="92" y="1897" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+latitude: Double</text>
+<text x="92" y="1920" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+longitude: Double</text>
+<text x="92" y="1943" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: EquipmentStatus</text>
+<text x="92" y="1966" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+installationDate: Date</text>
+<rect x="80" y="1995" width="420" height="188" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="80" y="1995" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="80" y1="2029" x2="500" y2="2029" stroke="#645F7C" stroke-width="1.0"/>
+<text x="290.0" y="2018.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">MaintenanceRecord</text>
+<text x="92" y="2053" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="92" y="2076" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+equipmentId: Long → Equipment</text>
+<text x="92" y="2099" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="92" y="2122" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+date: Date</text>
+<text x="92" y="2145" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+description: Text</text>
+<text x="92" y="2168" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+cost: Double</text>
+<rect x="580" y="165" width="460" height="1125" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="580" y="165" width="460" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="580" y1="221" x2="1040" y2="221" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="200.0" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Intervention Service</text>
+<rect x="600" y="237" width="420" height="234" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="600" y="237" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="600" y1="271" x2="1020" y2="271" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="260.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Intervention</text>
+<text x="612" y="295" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="612" y="318" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+incidentId: Long → Incident</text>
+<text x="612" y="341" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+departmentId: Long → Department</text>
+<text x="612" y="364" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+title: String</text>
+<text x="612" y="387" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+description: String</text>
+<text x="612" y="410" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: String</text>
+<text x="612" y="433" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+plannedAt: DateTime</text>
+<text x="612" y="456" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+closedAt: DateTime</text>
+<rect x="600" y="485" width="420" height="165" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="600" y="485" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="600" y1="519" x2="1020" y2="519" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="508.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">InterventionTask</text>
+<text x="612" y="543" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="612" y="566" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="612" y="589" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+description: String</text>
+<text x="612" y="612" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: String</text>
+<text x="612" y="635" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+dueDate: DateTime</text>
+<rect x="600" y="664" width="420" height="165" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="600" y="664" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="600" y1="698" x2="1020" y2="698" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="687.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">InterventionEvidence</text>
+<text x="612" y="722" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="612" y="745" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="612" y="768" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+imageUrl: String</text>
+<text x="612" y="791" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+description: String</text>
+<text x="612" y="814" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<rect x="600" y="843" width="420" height="142" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="600" y="843" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="600" y1="877" x2="1020" y2="877" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="866.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">InterventionAssignment</text>
+<text x="612" y="901" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="612" y="924" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="612" y="947" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+employeeId: Long → Employee</text>
+<text x="612" y="970" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+role: String</text>
+<rect x="600" y="999" width="420" height="142" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="600" y="999" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="600" y1="1033" x2="1020" y2="1033" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="1022.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">InterventionResource</text>
+<text x="612" y="1057" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="612" y="1080" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="612" y="1103" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+resourceId: Long → Resource</text>
+<text x="612" y="1126" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+quantity: Integer</text>
+<rect x="600" y="1155" width="420" height="119" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="600" y="1155" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="600" y1="1189" x2="1020" y2="1189" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="1178.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Resource</text>
+<text x="612" y="1213" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="612" y="1236" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+type: String</text>
+<text x="612" y="1259" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+name: String</text>
+<rect x="580" y="1330" width="460" height="859" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="580" y="1330" width="460" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="580" y1="1386" x2="1040" y2="1386" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="1365.0" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Report Service</text>
+<rect x="600" y="1402" width="420" height="280" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="600" y="1402" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="600" y1="1436" x2="1020" y2="1436" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="1425.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Report</text>
+<text x="612" y="1460" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="612" y="1483" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="612" y="1506" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+title: String</text>
+<text x="612" y="1529" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+description: String</text>
+<text x="612" y="1552" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+categoryId: Long → ReportCategory</text>
+<text x="612" y="1575" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+latitude: Double</text>
+<text x="612" y="1598" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+longitude: Double</text>
+<text x="612" y="1621" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: String</text>
+<text x="612" y="1644" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<text x="612" y="1667" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+deletedAt: DateTime</text>
+<rect x="600" y="1696" width="420" height="142" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="600" y="1696" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="600" y1="1730" x2="1020" y2="1730" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="1719.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">ReportImage</text>
+<text x="612" y="1754" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="612" y="1777" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+reportId: Long → Report</text>
+<text x="612" y="1800" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+cloudinaryUrl: String</text>
+<text x="612" y="1823" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+takenAt: DateTime</text>
+<rect x="600" y="1852" width="420" height="142" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="600" y="1852" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="600" y1="1886" x2="1020" y2="1886" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="1875.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">ReportCategory</text>
+<text x="612" y="1910" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="612" y="1933" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+name: String</text>
+<text x="612" y="1956" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+description: String</text>
+<text x="612" y="1979" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+active: Boolean</text>
+<rect x="600" y="2008" width="420" height="165" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="600" y="2008" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="600" y1="2042" x2="1020" y2="2042" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="2031.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">ReportHistory</text>
+<text x="612" y="2066" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="612" y="2089" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+reportId: Long → Report</text>
+<text x="612" y="2112" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+oldStatus: String</text>
+<text x="612" y="2135" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+newStatus: String</text>
+<text x="612" y="2158" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+changedAt: DateTime</text>
+<rect x="1100" y="165" width="460" height="837" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="1100" y="165" width="460" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="1100" y1="221" x2="1560" y2="221" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1330.0" y="200.0" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Resource &amp; Logistics Service</text>
+<rect x="1120" y="237" width="420" height="202" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1120" y="237" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="1120" y1="271" x2="1540" y2="271" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1330.0" y="260.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Team</text>
+<text x="1132" y="295" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1132" y="318" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+name: String</text>
+<text x="1132" y="341" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+specialty: String</text>
+<text x="1132" y="364" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+zone: String</text>
+<text x="1132" y="387" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: TeamStatus</text>
+<line x1="1120" y1="403" x2="1540" y2="403" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1132" y="425" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+isAvailable(): boolean</text>
+<rect x="1120" y="453" width="420" height="225" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1120" y="453" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="1120" y1="487" x2="1540" y2="487" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1330.0" y="476.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Resource</text>
+<text x="1132" y="511" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1132" y="534" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+name: String</text>
+<text x="1132" y="557" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+type: ResourceType</text>
+<text x="1132" y="580" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: ResourceStatus</text>
+<text x="1132" y="603" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+location: String</text>
+<line x1="1120" y1="619" x2="1540" y2="619" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1132" y="641" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+isAvailable(): boolean</text>
+<text x="1132" y="664" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+changeStatus(): void</text>
+<rect x="1120" y="692" width="420" height="294" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1120" y="692" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="1120" y1="726" x2="1540" y2="726" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1330.0" y="715.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">ResourceReservation</text>
+<text x="1132" y="750" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1132" y="773" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+resourceId: Long → Resource</text>
+<text x="1132" y="796" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+teamId: Long → Team</text>
+<text x="1132" y="819" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="1132" y="842" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+startDateTime: LocalDateTime</text>
+<text x="1132" y="865" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+endDateTime: LocalDateTime</text>
+<text x="1132" y="888" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: ReservationStatus</text>
+<line x1="1120" y1="904" x2="1540" y2="904" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1132" y="926" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+reserve(): void</text>
+<text x="1132" y="949" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+cancel(): void</text>
+<text x="1132" y="972" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+checkAvailability(): boolean</text>
+<rect x="1100" y="1042" width="460" height="923" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="1100" y="1042" width="460" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="1100" y1="1098" x2="1560" y2="1098" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1330.0" y="1077.0" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Citizen Engagement Service</text>
+<rect x="1120" y="1114" width="420" height="142" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1120" y="1114" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="1120" y1="1148" x2="1540" y2="1148" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1330.0" y="1137.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Confirmation</text>
+<text x="1132" y="1172" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1132" y="1195" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="1132" y="1218" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+incidentId: Long → Incident</text>
+<text x="1132" y="1241" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+date: DateTime</text>
+<rect x="1120" y="1270" width="420" height="165" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1120" y="1270" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="1120" y1="1304" x2="1540" y2="1304" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1330.0" y="1293.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Comment</text>
+<text x="1132" y="1328" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1132" y="1351" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="1132" y="1374" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+incidentId: Long → Incident</text>
+<text x="1132" y="1397" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+content: String</text>
+<text x="1132" y="1420" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<rect x="1120" y="1449" width="420" height="165" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1120" y="1449" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="1120" y1="1483" x2="1540" y2="1483" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1330.0" y="1472.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Complaint</text>
+<text x="1132" y="1507" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1132" y="1530" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="1132" y="1553" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="1132" y="1576" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+reason: String</text>
+<text x="1132" y="1599" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: String</text>
+<rect x="1120" y="1628" width="420" height="142" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1120" y="1628" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="1120" y1="1662" x2="1540" y2="1662" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1330.0" y="1651.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Subscription</text>
+<text x="1132" y="1686" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1132" y="1709" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="1132" y="1732" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+incidentId: Long → Incident</text>
+<text x="1132" y="1755" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<rect x="1120" y="1784" width="420" height="165" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="1120" y="1784" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="1120" y1="1818" x2="1540" y2="1818" stroke="#645F7C" stroke-width="1.0"/>
+<text x="1330.0" y="1807.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Feedback</text>
+<text x="1132" y="1842" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="1132" y="1865" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="1132" y="1888" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+interventionId: Long → Intervention</text>
+<text x="1132" y="1911" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+rating: Integer</text>
+<text x="1132" y="1934" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+comment: String</text>
+<rect x="60" y="2259" width="1500" height="112" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="60" y="2259" width="1500" height="40" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="60" y1="2299" x2="1560" y2="2299" stroke="#645F7C" stroke-width="1.0"/>
+<text x="810.0" y="2286" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">external — annuaire d'identité (Keycloak) · hors services, référencé par identifiant</text>
+<rect x="120" y="2315" width="300" height="40" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="120" y="2315" width="300" height="40" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<text x="270.0" y="2341.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#393939" text-anchor="middle">User</text>
+<rect x="460" y="2315" width="300" height="40" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="460" y="2315" width="300" height="40" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<text x="610.0" y="2341.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#393939" text-anchor="middle">Department</text>
+<rect x="800" y="2315" width="300" height="40" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="800" y="2315" width="300" height="40" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<text x="950.0" y="2341.0" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#393939" text-anchor="middle">Employee</text>
+</svg>

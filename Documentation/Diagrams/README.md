@@ -12,7 +12,7 @@ Les six diagrammes par microservice partagent le même thème :
 
 ## Vue globale
 
-Diagramme de classes global de la plateforme, couvrant les 6 microservices (image fournie telle quelle, PNG 8191 × 4404).
+Diagramme de classes global de la plateforme, couvrant les 6 microservices et le paquet `external` (identité fournie par Keycloak).
 
 ![Diagramme de classes global](class-diagram-global.png)
 

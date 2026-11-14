@@ -45,7 +45,7 @@ Chaque service est documenté dans le README de son dossier.
 
 ## Communication entre services
 
-Les services échangent par **API REST** pour les réponses immédiates et par **événements RabbitMQ** pour les traitements asynchrones. Exemple : `ReportCreated` → `ReportLinkedToIncident` → `IncidentAssignedToDepartment` → `InterventionCompleted` → `FeedbackSubmitted`.
+Les services échangent par **API REST** pour les réponses immédiates et par **événements RabbitMQ** pour les traitements asynchrones. Exemple : `ReportCreated` → `InterventionPlanned` → `ReservationConfirmed` → `InterventionClosed` → `MaintenanceRecorded`.
 
 ## Technologies
 
