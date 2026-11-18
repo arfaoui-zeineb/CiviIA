@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="1400" viewBox="0 0 1160 1400">
+<rect width="1160" height="1400" fill="#FFFFFF"/>
+<text x="580" y="58" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600" fill="#393939" text-anchor="middle">CiviIA — Municipal Communication &amp; Events Service</text>
+<text x="580" y="92" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#393939" text-anchor="middle">Diagramme de classes · 6 entités · 6 relations</text>
+<polygon points="177.5,122 184,128 190.5,122 184,116" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<text x="200.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">composition</text>
+<polygon points="313.5,122 320,128 326.5,122 320,116" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<text x="336.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">agrégation</text>
+<line x1="438.5" y1="122" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<line x1="443.5" y1="126.5" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<line x1="443.5" y1="117.5" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<text x="461.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">association</text>
+<text x="564.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#A63A3A" text-anchor="start">Entité (rouge) = référence par identifiant entre services</text>
+<rect x="60" y="152" width="1040" height="910" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="60" y="152" width="1040" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="60" y1="208" x2="1100" y2="208" stroke="#645F7C" stroke-width="1.0"/>
+<text x="580" y="186" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Annonces, événements et inscriptions</text>
+<rect x="90" y="224" width="420" height="142" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="90" y="224" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="90" y1="258" x2="510" y2="258" stroke="#645F7C" stroke-width="1.0"/>
+<text x="300.0" y="247.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Category</text>
+<text x="102" y="282" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="102" y="305" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+name: String</text>
+<text x="102" y="328" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+description: Text</text>
+<text x="102" y="351" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+active: boolean</text>
+<rect x="90" y="426" width="420" height="280" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="90" y="426" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="90" y1="460" x2="510" y2="460" stroke="#645F7C" stroke-width="1.0"/>
+<text x="300.0" y="449.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Announcement</text>
+<text x="102" y="484" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="102" y="507" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+categoryId: Long → Category</text>
+<text x="102" y="530" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+departmentId: Long → Department</text>
+<text x="102" y="553" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+eventId: Long → Event</text>
+<text x="102" y="576" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+title: String</text>
+<text x="102" y="599" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+content: Text</text>
+<text x="102" y="622" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: AnnouncementStatus</text>
+<text x="102" y="645" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+priority: AnnouncementPriority</text>
+<text x="102" y="668" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+publishedAt: DateTime</text>
+<text x="102" y="691" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+expiresAt: DateTime</text>
+<rect x="90" y="766" width="420" height="211" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="90" y="766" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="90" y1="800" x2="510" y2="800" stroke="#645F7C" stroke-width="1.0"/>
+<text x="300.0" y="789.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Attachment</text>
+<text x="102" y="824" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="102" y="847" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+announcementId: Long → Announcement</text>
+<text x="102" y="870" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+fileName: String</text>
+<text x="102" y="893" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+fileUrl: String</text>
+<text x="102" y="916" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+type: String</text>
+<text x="102" y="939" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+sizeBytes: Long</text>
+<text x="102" y="962" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+uploadedAt: DateTime</text>
+<rect x="640" y="224" width="420" height="188" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="640" y="224" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="640" y1="258" x2="1060" y2="258" stroke="#645F7C" stroke-width="1.0"/>
+<text x="850.0" y="247.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Venue</text>
+<text x="652" y="282" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="652" y="305" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+name: String</text>
+<text x="652" y="328" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+address: String</text>
+<text x="652" y="351" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+latitude: Double</text>
+<text x="652" y="374" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+longitude: Double</text>
+<text x="652" y="397" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+capacity: int</text>
+<rect x="640" y="472" width="420" height="303" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="640" y="472" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="640" y1="506" x2="1060" y2="506" stroke="#645F7C" stroke-width="1.0"/>
+<text x="850.0" y="495.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Event</text>
+<text x="652" y="530" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="652" y="553" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+categoryId: Long → Category</text>
+<text x="652" y="576" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+venueId: Long → Venue</text>
+<text x="652" y="599" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+departmentId: Long → Department</text>
+<text x="652" y="622" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+title: String</text>
+<text x="652" y="645" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+description: Text</text>
+<text x="652" y="668" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+startDate: DateTime</text>
+<text x="652" y="691" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+endDate: DateTime</text>
+<text x="652" y="714" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+capacity: int</text>
+<text x="652" y="737" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+registeredCount: int</text>
+<text x="652" y="760" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: EventStatus</text>
+<rect x="640" y="835" width="420" height="188" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="640" y="835" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="640" y1="869" x2="1060" y2="869" stroke="#645F7C" stroke-width="1.0"/>
+<text x="850.0" y="858.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">EventRegistration</text>
+<text x="652" y="893" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="652" y="916" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+eventId: Long → Event</text>
+<text x="652" y="939" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+userId: Long → User</text>
+<text x="652" y="962" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: String</text>
+<text x="652" y="985" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+registeredAt: DateTime</text>
+<text x="652" y="1008" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+cancelledAt: DateTime</text>
+<line x1="300" y1="366" x2="300" y2="426" stroke="#645F7C" stroke-width="1.4"/>
+<text x="306" y="384" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">1</text>
+<text x="306" y="420" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<line x1="300" y1="706" x2="300" y2="766" stroke="#645F7C" stroke-width="1.4"/>
+<text x="306" y="724" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">1</text>
+<text x="306" y="760" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<line x1="510" y1="290" x2="640" y2="505" stroke="#645F7C" stroke-width="1.4"/>
+<text x="516" y="300" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">1</text>
+<text x="596" y="500" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<line x1="510" y1="560" x2="640" y2="585" stroke="#645F7C" stroke-width="1.4"/>
+<text x="516" y="572" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<text x="600" y="578" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..1</text>
+<line x1="850" y1="412" x2="850" y2="472" stroke="#645F7C" stroke-width="1.4"/>
+<text x="858" y="430" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..1</text>
+<text x="858" y="466" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<line x1="850" y1="775" x2="850" y2="835" stroke="#645F7C" stroke-width="1.4"/>
+<text x="858" y="791" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">1</text>
+<text x="858" y="829" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<rect x="60" y="1082" width="1040" height="240" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="60" y="1082" width="1040" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="60" y1="1138" x2="1100" y2="1138" stroke="#645F7C" stroke-width="1.0"/>
+<text x="580" y="1116" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Énumérations</text>
+<rect x="190" y="1150" width="230" height="150" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="190" y="1150" width="230" height="48" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="190" y1="1198" x2="420" y2="1198" stroke="#645F7C" stroke-width="1.0"/>
+<text x="305.0" y="1170" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="middle">«enumeration»</text>
+<text x="305.0" y="1189" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">AnnouncementStatus</text>
+<text x="202" y="1220" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">DRAFT</text>
+<text x="202" y="1242" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">PUBLISHED</text>
+<text x="202" y="1264" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">EXPIRED</text>
+<text x="202" y="1286" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">ARCHIVED</text>
+<rect x="465" y="1150" width="230" height="150" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="465" y="1150" width="230" height="48" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="465" y1="1198" x2="695" y2="1198" stroke="#645F7C" stroke-width="1.0"/>
+<text x="580.0" y="1170" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="middle">«enumeration»</text>
+<text x="580.0" y="1189" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">AnnouncementPriority</text>
+<text x="477" y="1220" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">LOW</text>
+<text x="477" y="1242" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">NORMAL</text>
+<text x="477" y="1264" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">HIGH</text>
+<text x="477" y="1286" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">URGENT</text>
+<rect x="740" y="1150" width="230" height="172" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="740" y="1150" width="230" height="48" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="740" y1="1198" x2="970" y2="1198" stroke="#645F7C" stroke-width="1.0"/>
+<text x="855.0" y="1170" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="middle">«enumeration»</text>
+<text x="855.0" y="1189" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">EventStatus</text>
+<text x="752" y="1220" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">DRAFT</text>
+<text x="752" y="1242" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">OPEN</text>
+<text x="752" y="1264" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">FULL</text>
+<text x="752" y="1286" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">CLOSED</text>
+<text x="752" y="1308" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">CANCELLED</text>
+<line x1="90" y1="1340" x2="1070" y2="1340" stroke="#645F7C" stroke-width="0.9"/>
+<text x="90" y="1365" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">Références interservices : </text>
+<text x="241" y="1365" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#A63A3A" text-anchor="start">Department (departmentId)</text>
+<text x="420" y="1365" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">· </text>
+<text x="440" y="1365" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#A63A3A" text-anchor="start">User (userId)</text>
+</svg>

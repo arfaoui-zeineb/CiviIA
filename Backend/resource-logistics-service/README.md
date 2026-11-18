@@ -125,7 +125,13 @@ resource-logistics-service/
 └── src/test/java/             # tests unitaires et test de contexte
 ```
 
-## 7. Lancement
+## 7. Diagramme de classes
+
+![Diagramme de classes du Resource & Logistics Service](../../Documentation/Diagrams/class-diagram-resource-logistics-service.png)
+
+Version haute résolution : [class-diagram-resource-logistics-service.svg](../../Documentation/Diagrams/class-diagram-resource-logistics-service.svg)
+
+## 8. Lancement
 
 ```bash
 ./mvnw spring-boot:run
