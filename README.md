@@ -1,101 +1,77 @@
-# Municipal Communication & Events Service
+# CiviAI
 
-## 1. Présentation
+**Plateforme intelligente de signalement et de gestion des problèmes urbains, propulsée par l'intelligence artificielle.**
 
-Le **Municipal Communication & Events Service** est un microservice backend de la plateforme CivicPulse / CiviIA. Il assure la communication officielle de la municipalité et l'organisation des événements locaux, comme un panneau d'affichage numérique.
+CiviAI connecte l'alerte citoyenne à l'action municipale : les citoyens signalent un problème (route endommagée, éclairage en panne, fuite d'eau, déchets), l'IA regroupe et classe les signalements, et la municipalité intervient. Le projet est réalisé par l'équipe **InnovaSix** et repose sur **7 microservices**.
 
-Le module est autonome : il ne référence les autres services que par identifiants (`departmentId`, `userId`), sans clé étrangère inter-bases (dossier technique § 4.6).
+## Vision
 
-## 2. Responsabilités
+- **Analyse par IA** : classification automatique des signalements à partir des photos et des descriptions.
+- **Mobilisation collective** : les riverains confirment les problèmes, ce qui permet de qualifier leur impact.
+- **Transparence totale** : suivi en temps réel des travaux et évaluation citoyenne après intervention.
 
-- Publier des annonces officielles classées par catégorie.
-- Joindre des fichiers et médias à une annonce.
-- Organiser des événements dans des lieux municipaux.
-- Gérer les inscriptions aux événements et leur capacité.
+## Parcours d'un signalement
 
-## 3. Modèle de données (dossier technique § 4.6)
+1. **Signaler** : description, photo et localisation GPS.
+2. **Analyser** : classification par IA et détection des doublons.
+3. **Confirmer** : soutien des riverains concernés.
+4. **Orienter** : routage vers le service compétent.
+5. **Intervenir** : affectation d'une équipe et réalisation des travaux.
+6. **Évaluer** : notation citoyenne ou réclamation.
 
-| Entité | Attributs principaux |
-|---|---|
-| `Category` | id, name, description, active |
-| `Announcement` | id, categoryId, departmentId, eventId, title, content, status, priority, publishedAt, expiresAt |
-| `Attachment` | id, announcementId, fileName, fileUrl, type, sizeBytes, uploadedAt |
-| `Event` | id, categoryId, venueId, departmentId, title, description, startDate, endDate, capacity, registeredCount, status |
-| `Venue` | id, name, address, latitude, longitude, capacity |
-| `EventRegistration` | id, eventId, userId, status, registeredAt, cancelledAt |
+## Architecture
 
-### Énumérations
+Le système s'organise en cinq couches autonomes :
 
-| Énumération | Valeurs |
-|---|---|
-| `AnnouncementStatus` | DRAFT, PUBLISHED, EXPIRED, ARCHIVED |
-| `AnnouncementPriority` | LOW, NORMAL, HIGH, URGENT |
-| `EventStatus` | DRAFT, OPEN, FULL, CLOSED, CANCELLED |
-| `RegistrationStatus` | REGISTERED, CANCELLED (valeurs proposées) |
+1. **Présentation** : application citoyenne et dashboard municipal.
+2. **Entrée API** : API Gateway centralisée (routage et sécurité JWT).
+3. **Services métier** : 7 microservices Spring Boot.
+4. **Messagerie** : bus d'événements RabbitMQ.
+5. **Persistance** : une base MySQL par microservice.
 
-### Règles métier
+## Les 7 microservices
 
-- Une inscription est refusée quand `registeredCount` a atteint `capacity`. L'incrément est protégé par un **verrou optimiste** (`@Version` sur `Event`) : en cas d'inscriptions simultanées, la seconde échoue avec un conflit 409.
-- Une annulation renseigne `cancelledAt` et décrémente `registeredCount` ; un événement `FULL` repasse en `OPEN`.
-- Un utilisateur n'a qu'une inscription active par événement.
-- `endDate` est postérieure à `startDate` ; si un lieu est défini, `capacity` ne dépasse pas celle du `Venue`.
-- Une annonce dont `expiresAt` est dépassée passe à `EXPIRED` (tâche planifiée, toutes les heures).
-- `Category` est partagée entre annonces et événements (§ 8.3.4) : pas d'`AnnouncementCategory` séparée.
+| Service | Rôle | Responsable |
+|---|---|---|
+| Infrastructure Service | Parc d'équipements urbains et carnet d'entretien | Safa Banattia |
+| Report Service | Collecte des signalements, photos et cartes | Youssef Saaidi |
+| Municipal Communication & Events | Annonces officielles, événements et inscriptions | Molka Jebali |
+| Resource & Logistics | Équipes, ressources matérielles et réservations | Zeineb Arfaoui |
+| Intervention Service | Planification et suivi des travaux | Yessine Eleuch |
+| Citizen Engagement | Confirmations, commentaires et évaluations | Amen Allah Abdelhafidh |
+| Urban Insights & Prediction | Modèles ML, prédictions et alertes | À attribuer |
 
-## 4. API
+Chaque service est documenté dans le README de son dossier.
 
-### Catégories — `/api/categories`
-GET (liste), GET `/{id}`, POST, PUT `/{id}`, DELETE `/{id}`.
 
-### Annonces — `/api/announcements`
-GET (liste), GET `/{id}`, POST, PUT `/{id}`, POST `/{id}/publish`, DELETE `/{id}` (archive), GET `/{id}/attachments`, POST `/{id}/attachments`.
+## Communication entre services
 
-### Pièces jointes — `/api/announcement-attachments`
-GET `/{id}`, DELETE `/{id}`.
+Les services échangent par **API REST** pour les réponses immédiates et par **événements RabbitMQ** pour les traitements asynchrones. Exemple : `ReportCreated` → `InterventionPlanned` → `ReservationConfirmed` → `InterventionClosed` → `MaintenanceRecorded`.
 
-### Événements — `/api/events`
-GET (liste), GET `/{id}`, POST, PUT `/{id}`, POST `/{id}/open`, DELETE `/{id}` (annulation), GET `/{id}/registrations`, POST `/{id}/registrations`.
+## Technologies
 
-### Inscriptions — `/api/event-registrations`
-GET `/{id}`, DELETE `/{id}` (annulation).
+- **Backend** : Java, Spring Boot, REST et OpenAPI/Swagger.
+- **Échanges** : OpenFeign (synchrone) et RabbitMQ (asynchrone).
+- **Données et sécurité** : MySQL, Spring Security et JWT.
+- **Cartes et médias** : OpenStreetMap et Cloudinary.
+- **Déploiement** : Docker.
 
-### Lieux — `/api/venues`
-GET (liste), GET `/{id}`, POST, PUT `/{id}`, DELETE `/{id}`.
+## Règles de conception
 
-### Erreurs
+- **Database per Service** : aucun accès direct aux tables d'un autre service.
+- **Résilience** : messages persistants et consommateurs idempotents.
+- **Traçabilité** : suppression logique et historique des actions sensibles.
+- **Accès sécurisés** : droits contrôlés par rôle et par périmètre municipal.
 
-Corps d'erreur unique `{ timestamp, status, error, message, path }` : 400 (validation), 404 (introuvable), 409 (capacité atteinte / doublon / accès concurrent), 422 (règle métier).
+## Feuille de route
 
-## 5. Technologies
+1. **Phase 1 · Socle métier** : les sept services CRUD avec leurs règles métier.
+2. **Phase 2 · Intégration** : API Gateway, sécurité JWT et bus RabbitMQ.
+3. **Phase 3 · Intelligence** : module IA de classification, cartes thermiques et maintenance prédictive.
 
-Java 17 · Spring Boot 4.1.2 · Spring Web MVC · Spring Data JPA · Spring Validation · Lombok · MySQL (H2 en tests).
+## Organisation du dépôt
 
-## 6. Structure
-
-```
-municipal-communication-events-service/
-├── src/main/java/com/civia/municipalcommunicationeventsservice/
-│   ├── MunicipalCommunicationEventsServiceApplication.java
-│   ├── domain/model/          # 6 entites + enumerations
-│   ├── domain/repository/     # repositories JPA
-│   ├── service/               # regles metier + tache d'expiration
-│   ├── web/                   # controleurs REST
-│   ├── web/dto/               # requetes et reponses
-│   └── exception/             # erreurs et gestionnaire global
-├── src/main/resources/application.properties
-└── src/test/java/             # tests unitaires et test de contexte
-```
-
-## 7. Diagramme de classes
-
-![Diagramme de classes du Municipal Communication & Events Service](Documentation/Diagrams/class-diagram-municipal-communication-events-service.png)
-
-Version haute résolution : [class-diagram-municipal-communication-events-service.svg](Documentation/Diagrams/class-diagram-municipal-communication-events-service.svg)
-
-## 8. Lancement
-
-```bash
-./mvnw spring-boot:run
-```
-
-La base de données peut être configurée via `DB_URL`, `DB_USERNAME` et `DB_PASSWORD`.
+- Monorepo modulaire : un dossier par service.
+- Branches : `main` (stable), `develop` (intégration) et `feature/<service>`.
+- Pull Requests obligatoires avec revue croisée.
+- Commits normés : `feat:`, `fix:`, `docs:`.

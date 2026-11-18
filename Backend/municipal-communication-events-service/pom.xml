@@ -12,7 +12,11 @@
 	<artifactId>municipal-communication-events-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>municipal-communication-events-service</name>
+<<<<<<< HEAD
 	<description>Municipal Communication &amp; Events Service of the CivicPulse / CiviIA platform</description>
+=======
+	<description>municipal-communication-events-service</description>
+>>>>>>> 7ca5f39495356971a7a40b67ef97ddb2e58bb708
 	<url/>
 	<licenses>
 		<license/>
