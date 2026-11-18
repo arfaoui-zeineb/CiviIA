@@ -1,4 +1,4 @@
-package com.civia.resourcelogisticsservice.domain.model;
+package com.civia.resourcelogisticsservice.domain;
 
 /**
  * Statut d'une equipe. Valeurs proposees (le dossier technique indique seulement

@@ -1,4 +1,4 @@
-package com.civia.resourcelogisticsservice.domain.model;
+package com.civia.resourcelogisticsservice.domain;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,18 +15,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-/**
- * Ressource materielle (vehicule, equipement, outil). Ce service en est le seul
- * proprietaire (dossier technique § 8.1).
- */
+/** Equipe mobilisable pour une intervention (dossier technique § 4.5). */
 @Entity
-@Table(name = "resources")
+@Table(name = "teams")
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Resource {
+public class Team {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -36,22 +33,17 @@ public class Resource {
 	@Column(nullable = false)
 	private String name;
 
-	@Enumerated(EnumType.STRING)
-	@Column(nullable = false)
-	private ResourceType type;
+	private String specialty;
+
+	private String zone;
 
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)
 	@Builder.Default
-	private ResourceStatus status = ResourceStatus.AVAILABLE;
+	private TeamStatus status = TeamStatus.AVAILABLE;
 
-	private String location;
-
+	/** Une equipe n'est disponible que si son statut l'autorise. */
 	public boolean isAvailable() {
-		return status == ResourceStatus.AVAILABLE;
-	}
-
-	public void changeStatus(ResourceStatus newStatus) {
-		this.status = newStatus;
+		return status == TeamStatus.AVAILABLE;
 	}
 }

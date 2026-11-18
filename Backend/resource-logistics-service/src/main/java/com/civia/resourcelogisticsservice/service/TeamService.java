@@ -6,18 +6,19 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.civia.resourcelogisticsservice.domain.model.ReservationStatus;
-import com.civia.resourcelogisticsservice.domain.model.ResourceReservation;
-import com.civia.resourcelogisticsservice.domain.model.Team;
-import com.civia.resourcelogisticsservice.domain.model.TeamStatus;
-import com.civia.resourcelogisticsservice.domain.repository.ResourceReservationRepository;
-import com.civia.resourcelogisticsservice.domain.repository.TeamRepository;
+import com.civia.resourcelogisticsservice.domain.ReservationStatus;
+import com.civia.resourcelogisticsservice.domain.ResourceReservation;
+import com.civia.resourcelogisticsservice.domain.Team;
+import com.civia.resourcelogisticsservice.domain.TeamStatus;
 import com.civia.resourcelogisticsservice.exception.ResourceNotFoundException;
-import com.civia.resourcelogisticsservice.web.dto.TeamRequest;
+import com.civia.resourcelogisticsservice.repository.ResourceReservationRepository;
+import com.civia.resourcelogisticsservice.repository.TeamRepository;
+import lombok.RequiredArgsConstructor;
 
 @Service
+@RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class TeamService {
+public class TeamService implements ITeamService {
 
 	private static final List<ReservationStatus> ACTIVE_STATUSES =
 			List.of(ReservationStatus.PENDING, ReservationStatus.CONFIRMED);
@@ -25,62 +26,52 @@ public class TeamService {
 	private final TeamRepository teamRepository;
 	private final ResourceReservationRepository reservationRepository;
 
-	public TeamService(TeamRepository teamRepository, ResourceReservationRepository reservationRepository) {
-		this.teamRepository = teamRepository;
-		this.reservationRepository = reservationRepository;
-	}
-
-	public List<Team> findAll() {
+	@Override
+	public List<Team> retrieveAllTeams() {
 		return teamRepository.findAll();
 	}
 
-	public Team findById(Long id) {
-		return teamRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Team " + id + " not found"));
-	}
-
+	@Override
 	@Transactional
-	public Team create(TeamRequest request) {
-		Team team = Team.builder()
-				.name(request.name())
-				.specialty(request.specialty())
-				.zone(request.zone())
-				.status(request.status() != null ? request.status() : TeamStatus.AVAILABLE)
-				.build();
+	public Team addTeam(Team team) {
+		if (team.getStatus() == null) {
+			team.setStatus(TeamStatus.AVAILABLE);
+		}
 		return teamRepository.save(team);
 	}
 
+	@Override
 	@Transactional
-	public Team update(Long id, TeamRequest request) {
-		Team team = findById(id);
-		team.setName(request.name());
-		team.setSpecialty(request.specialty());
-		team.setZone(request.zone());
-		team.setStatus(request.status() != null ? request.status() : team.getStatus());
+	public Team updateTeam(Team team) {
+		retrieveTeam(team.getId());
 		return teamRepository.save(team);
 	}
 
-	@Transactional
-	public void delete(Long id) {
-		teamRepository.delete(findById(id));
+	@Override
+	public Team retrieveTeam(Long idTeam) {
+		return teamRepository.findById(idTeam)
+				.orElseThrow(() -> new ResourceNotFoundException("Team " + idTeam + " not found"));
 	}
 
-	/**
-	 * Une equipe est disponible si son statut l'autorise ET si elle n'a aucune
-	 * reservation active sur le creneau demande (dossier technique § 4.5).
-	 */
-	public boolean isAvailable(Long id, LocalDateTime start, LocalDateTime end) {
-		validatePeriod(start, end);
-		Team team = findById(id);
+	@Override
+	@Transactional
+	public void removeTeam(Long idTeam) {
+		teamRepository.deleteById(idTeam);
+	}
+
+	@Override
+	public boolean isTeamAvailable(Long idTeam, LocalDateTime startDateTime, LocalDateTime endDateTime) {
+		validatePeriod(startDateTime, endDateTime);
+		Team team = retrieveTeam(idTeam);
 		if (!team.isAvailable()) {
 			return false;
 		}
 		ResourceReservation probe = ResourceReservation.builder()
-				.teamId(id)
-				.startDateTime(start)
-				.endDateTime(end)
+				.teamId(idTeam)
+				.startDateTime(startDateTime)
+				.endDateTime(endDateTime)
 				.build();
-		return reservationRepository.findByTeamIdAndStatusIn(id, ACTIVE_STATUSES).stream()
+		return reservationRepository.findByTeamIdAndStatusIn(idTeam, ACTIVE_STATUSES).stream()
 				.noneMatch(probe::overlaps);
 	}
 

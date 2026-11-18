@@ -5,66 +5,62 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.civia.resourcelogisticsservice.domain.model.Resource;
-import com.civia.resourcelogisticsservice.domain.model.ResourceStatus;
-import com.civia.resourcelogisticsservice.domain.repository.ResourceRepository;
+import com.civia.resourcelogisticsservice.domain.Resource;
+import com.civia.resourcelogisticsservice.domain.ResourceStatus;
 import com.civia.resourcelogisticsservice.exception.ResourceNotFoundException;
-import com.civia.resourcelogisticsservice.web.dto.ResourceRequest;
+import com.civia.resourcelogisticsservice.repository.ResourceRepository;
+import lombok.RequiredArgsConstructor;
 
 @Service
+@RequiredArgsConstructor
 @Transactional(readOnly = true)
-public class ResourceService {
+public class ResourceService implements IResourceService {
 
 	private final ResourceRepository resourceRepository;
 
-	public ResourceService(ResourceRepository resourceRepository) {
-		this.resourceRepository = resourceRepository;
-	}
-
-	public List<Resource> findAll() {
+	@Override
+	public List<Resource> retrieveAllResources() {
 		return resourceRepository.findAll();
 	}
 
-	public Resource findById(Long id) {
-		return resourceRepository.findById(id)
-				.orElseThrow(() -> new ResourceNotFoundException("Resource " + id + " not found"));
-	}
-
+	@Override
 	@Transactional
-	public Resource create(ResourceRequest request) {
-		Resource resource = Resource.builder()
-				.name(request.name())
-				.type(request.type())
-				.status(request.status() != null ? request.status() : ResourceStatus.AVAILABLE)
-				.location(request.location())
-				.build();
+	public Resource addResource(Resource resource) {
+		if (resource.getStatus() == null) {
+			resource.setStatus(ResourceStatus.AVAILABLE);
+		}
 		return resourceRepository.save(resource);
 	}
 
+	@Override
 	@Transactional
-	public Resource update(Long id, ResourceRequest request) {
-		Resource resource = findById(id);
-		resource.setName(request.name());
-		resource.setType(request.type());
-		resource.setStatus(request.status() != null ? request.status() : resource.getStatus());
-		resource.setLocation(request.location());
+	public Resource updateResource(Resource resource) {
+		retrieveResource(resource.getId());
 		return resourceRepository.save(resource);
 	}
 
-	@Transactional
-	public void delete(Long id) {
-		resourceRepository.delete(findById(id));
+	@Override
+	public Resource retrieveResource(Long idResource) {
+		return resourceRepository.findById(idResource)
+				.orElseThrow(() -> new ResourceNotFoundException("Resource " + idResource + " not found"));
 	}
 
-	/** changeStatus() : modifie le statut d'une ressource. */
+	@Override
 	@Transactional
-	public Resource changeStatus(Long id, ResourceStatus status) {
-		Resource resource = findById(id);
+	public void removeResource(Long idResource) {
+		resourceRepository.deleteById(idResource);
+	}
+
+	@Override
+	@Transactional
+	public Resource changeStatus(Long idResource, ResourceStatus status) {
+		Resource resource = retrieveResource(idResource);
 		resource.changeStatus(status);
 		return resourceRepository.save(resource);
 	}
 
-	public boolean isAvailable(Long id) {
-		return findById(id).isAvailable();
+	@Override
+	public boolean isResourceAvailable(Long idResource) {
+		return retrieveResource(idResource).isAvailable();
 	}
 }

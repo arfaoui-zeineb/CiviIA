@@ -91,7 +91,9 @@ Opérations : `reserve()`, `cancel()`, `checkAvailability()`.
 |---|---|---|
 | GET | `/api/reservations` | Liste des réservations (filtre optionnel `?interventionId=`) |
 | GET | `/api/reservations/{id}` | Réservation par identifiant |
-| POST | `/api/reservations` | Créer/confirmer une réservation (201 + `Location`) |
+| POST | `/api/reservations` | Créer/confirmer une réservation |
+| PUT | `/api/reservations/{id}` | Remplacer une réservation active |
+| DELETE | `/api/reservations/{id}` | Supprimer une réservation et libérer la ressource |
 | POST | `/api/reservations/{id}/cancel` | Annuler une réservation |
 
 ### Erreurs
@@ -115,15 +117,16 @@ Java 17 · Spring Boot 4.1.2 · Spring Web MVC · Spring Data JPA · Spring Vali
 resource-logistics-service/
 ├── src/main/java/com/civia/resourcelogisticsservice/
 │   ├── ResourceLogisticsServiceApplication.java
-│   ├── domain/model/          # Team, Resource, ResourceReservation + énumérations
-│   ├── domain/repository/     # repositories JPA
-│   ├── service/               # règles métier
-│   ├── web/                   # contrôleurs REST
-│   ├── web/dto/               # requêtes et réponses
+│   ├── domain/                # Team, Resource, ResourceReservation + énumérations
+│   ├── repository/            # repositories JPA
+│   ├── service/               # ITeamService, IResourceService, IResourceReservationService + implémentations
+│   ├── controller/            # contrôleurs REST (entités en @RequestBody)
 │   └── exception/             # erreurs et gestionnaire global
 ├── src/main/resources/application.properties
 └── src/test/java/             # tests unitaires et test de contexte
 ```
+
+L'organisation suit celle du projet **Auto-Loc** : entités et énumérations dans `domain`, repositories `@Repository` dans `repository`, contrats `I...Service` et leurs implémentations dans `service`, contrôleurs `@RestController` dans `controller` (injection par `@RequiredArgsConstructor`, entités en `@RequestBody`).
 
 ## 7. Diagramme de classes
 

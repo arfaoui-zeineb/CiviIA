@@ -1,4 +1,4 @@
-package com.civia.resourcelogisticsservice.domain.model;
+package com.civia.resourcelogisticsservice.domain;
 
 import java.time.LocalDateTime;
 import java.util.List;
