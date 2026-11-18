@@ -16,48 +16,65 @@ import org.springframework.web.bind.annotation.RestController;
 import com.civia.resourcelogisticsservice.domain.Resource;
 import com.civia.resourcelogisticsservice.domain.ResourceStatus;
 import com.civia.resourcelogisticsservice.service.IResourceService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/resources")
+@RequestMapping("/Resource")
+@Tag(name = "Resources", description = "Gestion des ressources materielles")
 public class ResourceController {
 
 	private final IResourceService resourceService;
 
-	@PostMapping
+	@PostMapping("/addResource")
+	@Operation(summary = "addResource", description = "Creer une ressource")
 	public Resource addResource(@RequestBody Resource resource) {
 		return resourceService.addResource(resource);
 	}
 
-	@GetMapping
-	public List<Resource> retrieveAllResources() {
-		return resourceService.retrieveAllResources();
+	@GetMapping("/getAllResources")
+	@Operation(summary = "getAllResources", description = "Recuperer toutes les ressources")
+	public List<Resource> getAllResources() {
+		return resourceService.getAllResources();
 	}
 
-	@GetMapping("/{id}")
-	public Resource retrieveResource(@PathVariable Long id) {
-		return resourceService.retrieveResource(id);
+	@GetMapping("/getResource/{idResource}")
+	@Operation(summary = "getResource", description = "Recuperer une ressource par identifiant")
+	public Resource getResource(@Parameter(name = "idResource", description = "idResource", required = true)
+			@PathVariable("idResource") Long idResource) {
+		return resourceService.getResource(idResource);
 	}
 
-	@PutMapping("/{id}")
-	public Resource updateResource(@PathVariable Long id, @RequestBody Resource resource) {
-		resource.setId(id);
+	@PutMapping("/updateResource")
+	@Operation(summary = "updateResource", description = "Remplacer une ressource")
+	public Resource updateResource(@RequestBody Resource resource) {
 		return resourceService.updateResource(resource);
 	}
 
-	@PatchMapping("/{id}/status")
-	public Resource changeStatus(@PathVariable Long id, @RequestParam ResourceStatus status) {
-		return resourceService.changeStatus(id, status);
+	@PatchMapping("/changeStatus/{idResource}")
+	@Operation(summary = "changeStatus", description = "Changer le statut d'une ressource")
+	public Resource changeStatus(
+			@Parameter(name = "idResource", description = "idResource", required = true)
+			@PathVariable("idResource") Long idResource,
+			@RequestParam ResourceStatus status) {
+		return resourceService.changeStatus(idResource, status);
 	}
 
-	@DeleteMapping("/{id}")
-	public void removeResource(@PathVariable Long id) {
-		resourceService.removeResource(id);
+	@DeleteMapping("/deleteResource/{idResource}")
+	@Operation(summary = "deleteResource", description = "Supprimer une ressource")
+	public void deleteResource(@Parameter(name = "idResource", description = "idResource", required = true)
+			@PathVariable("idResource") Long idResource) {
+		resourceService.deleteResource(idResource);
 	}
 
-	@GetMapping("/{id}/availability")
-	public boolean isResourceAvailable(@PathVariable Long id) {
-		return resourceService.isResourceAvailable(id);
+	@GetMapping("/isResourceAvailable/{idResource}")
+	@Operation(summary = "isResourceAvailable", description = "Verifier la disponibilite d'une ressource")
+	public boolean isResourceAvailable(
+			@Parameter(name = "idResource", description = "idResource", required = true)
+			@PathVariable("idResource") Long idResource) {
+		return resourceService.isResourceAvailable(idResource);
 	}
 }

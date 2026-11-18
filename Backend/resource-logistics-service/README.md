@@ -62,39 +62,41 @@ Opérations : `reserve()`, `cancel()`, `checkAvailability()`.
 
 ## 4. API
 
-### Équipes — `/api/teams`
+Convention de nommage (style Auto-Loc) : `/<Entité>/<action>/{idEntité}`, par exemple `/Team/getTeam/{idTeam}`.
+
+### Équipes — `/Team`
 
 | Méthode | Endpoint | Description |
 |---|---|---|
-| GET | `/api/teams` | Liste des équipes |
-| GET | `/api/teams/{id}` | Équipe par identifiant |
-| POST | `/api/teams` | Créer une équipe (201 + `Location`) |
-| PUT | `/api/teams/{id}` | Remplacer une équipe |
-| DELETE | `/api/teams/{id}` | Supprimer une équipe (204) |
-| GET | `/api/teams/{id}/availability?startDateTime=...&endDateTime=...` | Disponibilité sur un créneau |
+| POST | `/Team/addTeam` | Créer une équipe |
+| GET | `/Team/getAllTeams` | Liste des équipes |
+| GET | `/Team/getTeam/{idTeam}` | Équipe par identifiant |
+| PUT | `/Team/updateTeam` | Remplacer une équipe |
+| DELETE | `/Team/deleteTeam/{idTeam}` | Supprimer une équipe |
+| GET | `/Team/isTeamAvailable/{idTeam}?startDateTime=...&endDateTime=...` | Disponibilité sur un créneau |
 
-### Ressources — `/api/resources`
-
-| Méthode | Endpoint | Description |
-|---|---|---|
-| GET | `/api/resources` | Liste des ressources |
-| GET | `/api/resources/{id}` | Ressource par identifiant |
-| POST | `/api/resources` | Créer une ressource (201 + `Location`) |
-| PUT | `/api/resources/{id}` | Remplacer une ressource |
-| PATCH | `/api/resources/{id}/status?status=...` | Changer le statut |
-| DELETE | `/api/resources/{id}` | Supprimer une ressource (204) |
-| GET | `/api/resources/{id}/availability` | Disponibilité de la ressource |
-
-### Réservations — `/api/reservations`
+### Ressources — `/Resource`
 
 | Méthode | Endpoint | Description |
 |---|---|---|
-| GET | `/api/reservations` | Liste des réservations (filtre optionnel `?interventionId=`) |
-| GET | `/api/reservations/{id}` | Réservation par identifiant |
-| POST | `/api/reservations` | Créer/confirmer une réservation |
-| PUT | `/api/reservations/{id}` | Remplacer une réservation active |
-| DELETE | `/api/reservations/{id}` | Supprimer une réservation et libérer la ressource |
-| POST | `/api/reservations/{id}/cancel` | Annuler une réservation |
+| POST | `/Resource/addResource` | Créer une ressource |
+| GET | `/Resource/getAllResources` | Liste des ressources |
+| GET | `/Resource/getResource/{idResource}` | Ressource par identifiant |
+| PUT | `/Resource/updateResource` | Remplacer une ressource |
+| PATCH | `/Resource/changeStatus/{idResource}?status=...` | Changer le statut |
+| DELETE | `/Resource/deleteResource/{idResource}` | Supprimer une ressource |
+| GET | `/Resource/isResourceAvailable/{idResource}` | Disponibilité de la ressource |
+
+### Réservations — `/Reservation`
+
+| Méthode | Endpoint | Description |
+|---|---|---|
+| POST | `/Reservation/addReservation` | Créer/confirmer une réservation |
+| GET | `/Reservation/getAllReservations` | Liste des réservations (filtre optionnel `?interventionId=`) |
+| GET | `/Reservation/getReservation/{idReservation}` | Réservation par identifiant |
+| PUT | `/Reservation/updateReservation` | Remplacer une réservation active |
+| DELETE | `/Reservation/deleteReservation/{idReservation}` | Supprimer une réservation et libérer la ressource |
+| POST | `/Reservation/cancelReservation/{idReservation}` | Annuler une réservation |
 
 ### Erreurs
 

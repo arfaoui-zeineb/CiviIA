@@ -15,44 +15,57 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.civia.resourcelogisticsservice.domain.Team;
 import com.civia.resourcelogisticsservice.service.ITeamService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/teams")
+@RequestMapping("/Team")
+@Tag(name = "Teams", description = "Gestion des equipes")
 public class TeamController {
 
 	private final ITeamService teamService;
 
-	@PostMapping
+	@PostMapping("/addTeam")
+	@Operation(summary = "addTeam", description = "Creer une equipe")
 	public Team addTeam(@RequestBody Team team) {
 		return teamService.addTeam(team);
 	}
 
-	@GetMapping
-	public List<Team> retrieveAllTeams() {
-		return teamService.retrieveAllTeams();
+	@GetMapping("/getAllTeams")
+	@Operation(summary = "getAllTeams", description = "Recuperer toutes les equipes")
+	public List<Team> getAllTeams() {
+		return teamService.getAllTeams();
 	}
 
-	@GetMapping("/{id}")
-	public Team retrieveTeam(@PathVariable Long id) {
-		return teamService.retrieveTeam(id);
+	@GetMapping("/getTeam/{idTeam}")
+	@Operation(summary = "getTeam", description = "Recuperer une equipe par identifiant")
+	public Team getTeam(@Parameter(name = "idTeam", description = "idTeam", required = true)
+			@PathVariable("idTeam") Long idTeam) {
+		return teamService.getTeam(idTeam);
 	}
 
-	@PutMapping("/{id}")
-	public Team updateTeam(@PathVariable Long id, @RequestBody Team team) {
-		team.setId(id);
+	@PutMapping("/updateTeam")
+	@Operation(summary = "updateTeam", description = "Remplacer une equipe")
+	public Team updateTeam(@RequestBody Team team) {
 		return teamService.updateTeam(team);
 	}
 
-	@DeleteMapping("/{id}")
-	public void removeTeam(@PathVariable Long id) {
-		teamService.removeTeam(id);
+	@DeleteMapping("/deleteTeam/{idTeam}")
+	@Operation(summary = "deleteTeam", description = "Supprimer une equipe")
+	public void deleteTeam(@Parameter(name = "idTeam", description = "idTeam", required = true)
+			@PathVariable("idTeam") Long idTeam) {
+		teamService.deleteTeam(idTeam);
 	}
 
-	@GetMapping("/{id}/availability")
-	public boolean isTeamAvailable(@PathVariable Long id,
+	@GetMapping("/isTeamAvailable/{idTeam}")
+	@Operation(summary = "isTeamAvailable", description = "Verifier la disponibilite d'une equipe sur un creneau")
+	public boolean isTeamAvailable(
+			@Parameter(name = "idTeam", description = "idTeam", required = true)
+			@PathVariable("idTeam") Long idTeam,
 			@RequestParam LocalDateTime startDateTime, @RequestParam LocalDateTime endDateTime) {
-		return teamService.isTeamAvailable(id, startDateTime, endDateTime);
+		return teamService.isTeamAvailable(idTeam, startDateTime, endDateTime);
 	}
 }

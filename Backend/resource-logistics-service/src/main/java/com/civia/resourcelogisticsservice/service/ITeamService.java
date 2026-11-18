@@ -7,15 +7,15 @@ import com.civia.resourcelogisticsservice.domain.Team;
 
 public interface ITeamService {
 
-	List<Team> retrieveAllTeams();
+	List<Team> getAllTeams();
 
 	Team addTeam(Team team);
 
 	Team updateTeam(Team team);
 
-	Team retrieveTeam(Long idTeam);
+	Team getTeam(Long idTeam);
 
-	void removeTeam(Long idTeam);
+	void deleteTeam(Long idTeam);
 
 	boolean isTeamAvailable(Long idTeam, LocalDateTime startDateTime, LocalDateTime endDateTime);
 }

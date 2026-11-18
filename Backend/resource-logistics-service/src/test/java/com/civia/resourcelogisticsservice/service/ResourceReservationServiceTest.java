@@ -144,7 +144,7 @@ class ResourceReservationServiceTest {
 	}
 
 	@Test
-	void removeReservationDeletesAndReleasesResource() {
+	void deleteReservationDeletesAndReleasesResource() {
 		Resource resource = availableResource();
 		resource.changeStatus(ResourceStatus.RESERVED);
 		ResourceReservation confirmed = ResourceReservation.builder()
@@ -154,7 +154,7 @@ class ResourceReservationServiceTest {
 		when(resourceRepository.findById(20L)).thenReturn(Optional.of(resource));
 		when(reservationRepository.findByResourceIdAndStatusIn(any(), any())).thenReturn(List.of());
 
-		service.removeReservation(1L);
+		service.deleteReservation(1L);
 
 		verify(reservationRepository).deleteById(1L);
 		assertThat(resource.getStatus()).isEqualTo(ResourceStatus.AVAILABLE);

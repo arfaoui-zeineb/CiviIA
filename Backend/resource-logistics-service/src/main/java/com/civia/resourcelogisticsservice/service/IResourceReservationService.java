@@ -6,17 +6,17 @@ import com.civia.resourcelogisticsservice.domain.ResourceReservation;
 
 public interface IResourceReservationService {
 
-	List<ResourceReservation> retrieveAllReservations();
+	List<ResourceReservation> getAllReservations();
 
 	ResourceReservation addReservation(ResourceReservation reservation);
 
 	ResourceReservation updateReservation(ResourceReservation reservation);
 
-	ResourceReservation retrieveReservation(Long idReservation);
+	ResourceReservation getReservation(Long idReservation);
 
-	void removeReservation(Long idReservation);
+	void deleteReservation(Long idReservation);
 
-	List<ResourceReservation> retrieveReservationsByIntervention(Long interventionId);
+	List<ResourceReservation> getReservationsByIntervention(Long interventionId);
 
 	ResourceReservation cancelReservation(Long idReservation);
 }

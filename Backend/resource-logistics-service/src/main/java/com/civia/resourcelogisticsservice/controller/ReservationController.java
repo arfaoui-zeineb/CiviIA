@@ -14,46 +14,60 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.civia.resourcelogisticsservice.domain.ResourceReservation;
 import com.civia.resourcelogisticsservice.service.IResourceReservationService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 
 @RestController
 @RequiredArgsConstructor
-@RequestMapping("/api/reservations")
+@RequestMapping("/Reservation")
+@Tag(name = "Reservations", description = "Gestion des reservations")
 public class ReservationController {
 
 	private final IResourceReservationService reservationService;
 
-	@PostMapping
+	@PostMapping("/addReservation")
+	@Operation(summary = "addReservation", description = "Creer et confirmer une reservation")
 	public ResourceReservation addReservation(@RequestBody ResourceReservation reservation) {
 		return reservationService.addReservation(reservation);
 	}
 
-	@GetMapping
-	public List<ResourceReservation> retrieveAllReservations(@RequestParam(required = false) Long interventionId) {
+	@GetMapping("/getAllReservations")
+	@Operation(summary = "getAllReservations", description = "Recuperer les reservations (filtre interventionId optionnel)")
+	public List<ResourceReservation> getAllReservations(@RequestParam(required = false) Long interventionId) {
 		return interventionId != null
-				? reservationService.retrieveReservationsByIntervention(interventionId)
-				: reservationService.retrieveAllReservations();
+				? reservationService.getReservationsByIntervention(interventionId)
+				: reservationService.getAllReservations();
 	}
 
-	@GetMapping("/{id}")
-	public ResourceReservation retrieveReservation(@PathVariable Long id) {
-		return reservationService.retrieveReservation(id);
+	@GetMapping("/getReservation/{idReservation}")
+	@Operation(summary = "getReservation", description = "Recuperer une reservation par identifiant")
+	public ResourceReservation getReservation(
+			@Parameter(name = "idReservation", description = "idReservation", required = true)
+			@PathVariable("idReservation") Long idReservation) {
+		return reservationService.getReservation(idReservation);
 	}
 
-	@PutMapping("/{id}")
-	public ResourceReservation updateReservation(@PathVariable Long id,
-			@RequestBody ResourceReservation reservation) {
-		reservation.setId(id);
+	@PutMapping("/updateReservation")
+	@Operation(summary = "updateReservation", description = "Remplacer une reservation active")
+	public ResourceReservation updateReservation(@RequestBody ResourceReservation reservation) {
 		return reservationService.updateReservation(reservation);
 	}
 
-	@DeleteMapping("/{id}")
-	public void removeReservation(@PathVariable Long id) {
-		reservationService.removeReservation(id);
+	@DeleteMapping("/deleteReservation/{idReservation}")
+	@Operation(summary = "deleteReservation", description = "Supprimer une reservation et liberer la ressource")
+	public void deleteReservation(
+			@Parameter(name = "idReservation", description = "idReservation", required = true)
+			@PathVariable("idReservation") Long idReservation) {
+		reservationService.deleteReservation(idReservation);
 	}
 
-	@PostMapping("/{id}/cancel")
-	public ResourceReservation cancelReservation(@PathVariable Long id) {
-		return reservationService.cancelReservation(id);
+	@PostMapping("/cancelReservation/{idReservation}")
+	@Operation(summary = "cancelReservation", description = "Annuler une reservation")
+	public ResourceReservation cancelReservation(
+			@Parameter(name = "idReservation", description = "idReservation", required = true)
+			@PathVariable("idReservation") Long idReservation) {
+		return reservationService.cancelReservation(idReservation);
 	}
 }

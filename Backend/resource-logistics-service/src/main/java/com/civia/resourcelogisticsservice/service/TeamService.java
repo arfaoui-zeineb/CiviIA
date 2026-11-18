@@ -27,7 +27,7 @@ public class TeamService implements ITeamService {
 	private final ResourceReservationRepository reservationRepository;
 
 	@Override
-	public List<Team> retrieveAllTeams() {
+	public List<Team> getAllTeams() {
 		return teamRepository.findAll();
 	}
 
@@ -43,26 +43,26 @@ public class TeamService implements ITeamService {
 	@Override
 	@Transactional
 	public Team updateTeam(Team team) {
-		retrieveTeam(team.getId());
+		getTeam(team.getId());
 		return teamRepository.save(team);
 	}
 
 	@Override
-	public Team retrieveTeam(Long idTeam) {
+	public Team getTeam(Long idTeam) {
 		return teamRepository.findById(idTeam)
 				.orElseThrow(() -> new ResourceNotFoundException("Team " + idTeam + " not found"));
 	}
 
 	@Override
 	@Transactional
-	public void removeTeam(Long idTeam) {
+	public void deleteTeam(Long idTeam) {
 		teamRepository.deleteById(idTeam);
 	}
 
 	@Override
 	public boolean isTeamAvailable(Long idTeam, LocalDateTime startDateTime, LocalDateTime endDateTime) {
 		validatePeriod(startDateTime, endDateTime);
-		Team team = retrieveTeam(idTeam);
+		Team team = getTeam(idTeam);
 		if (!team.isAvailable()) {
 			return false;
 		}

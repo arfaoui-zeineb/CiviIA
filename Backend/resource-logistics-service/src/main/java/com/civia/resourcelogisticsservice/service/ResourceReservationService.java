@@ -32,17 +32,17 @@ public class ResourceReservationService implements IResourceReservationService {
 	private final TeamRepository teamRepository;
 
 	@Override
-	public List<ResourceReservation> retrieveAllReservations() {
+	public List<ResourceReservation> getAllReservations() {
 		return reservationRepository.findAll();
 	}
 
 	@Override
-	public List<ResourceReservation> retrieveReservationsByIntervention(Long interventionId) {
+	public List<ResourceReservation> getReservationsByIntervention(Long interventionId) {
 		return reservationRepository.findByInterventionId(interventionId);
 	}
 
 	@Override
-	public ResourceReservation retrieveReservation(Long idReservation) {
+	public ResourceReservation getReservation(Long idReservation) {
 		return reservationRepository.findById(idReservation)
 				.orElseThrow(() -> new ResourceNotFoundException("Reservation " + idReservation + " not found"));
 	}
@@ -83,7 +83,7 @@ public class ResourceReservationService implements IResourceReservationService {
 	@Override
 	@Transactional
 	public ResourceReservation updateReservation(ResourceReservation reservation) {
-		ResourceReservation existing = retrieveReservation(reservation.getId());
+		ResourceReservation existing = getReservation(reservation.getId());
 		if (!existing.isActive()) {
 			throw new BusinessRuleException("Only an active reservation can be updated");
 		}
@@ -127,17 +127,17 @@ public class ResourceReservationService implements IResourceReservationService {
 	@Override
 	@Transactional
 	public ResourceReservation cancelReservation(Long idReservation) {
-		ResourceReservation reservation = retrieveReservation(idReservation);
+		ResourceReservation reservation = getReservation(idReservation);
 		reservation.cancel();
 		releaseResourceIfUnused(reservation.getResourceId(), idReservation);
 		return reservationRepository.save(reservation);
 	}
 
-	/** removeReservation : supprime et libere la ressource si elle n'est plus retenue (DELETE). */
+	/** deleteReservation : supprime et libere la ressource si elle n'est plus retenue (DELETE). */
 	@Override
 	@Transactional
-	public void removeReservation(Long idReservation) {
-		ResourceReservation reservation = retrieveReservation(idReservation);
+	public void deleteReservation(Long idReservation) {
+		ResourceReservation reservation = getReservation(idReservation);
 		if (reservation.isActive()) {
 			releaseResourceIfUnused(reservation.getResourceId(), idReservation);
 		}

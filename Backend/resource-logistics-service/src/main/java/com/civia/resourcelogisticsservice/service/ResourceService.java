@@ -19,7 +19,7 @@ public class ResourceService implements IResourceService {
 	private final ResourceRepository resourceRepository;
 
 	@Override
-	public List<Resource> retrieveAllResources() {
+	public List<Resource> getAllResources() {
 		return resourceRepository.findAll();
 	}
 
@@ -35,32 +35,32 @@ public class ResourceService implements IResourceService {
 	@Override
 	@Transactional
 	public Resource updateResource(Resource resource) {
-		retrieveResource(resource.getId());
+		getResource(resource.getId());
 		return resourceRepository.save(resource);
 	}
 
 	@Override
-	public Resource retrieveResource(Long idResource) {
+	public Resource getResource(Long idResource) {
 		return resourceRepository.findById(idResource)
 				.orElseThrow(() -> new ResourceNotFoundException("Resource " + idResource + " not found"));
 	}
 
 	@Override
 	@Transactional
-	public void removeResource(Long idResource) {
+	public void deleteResource(Long idResource) {
 		resourceRepository.deleteById(idResource);
 	}
 
 	@Override
 	@Transactional
 	public Resource changeStatus(Long idResource, ResourceStatus status) {
-		Resource resource = retrieveResource(idResource);
+		Resource resource = getResource(idResource);
 		resource.changeStatus(status);
 		return resourceRepository.save(resource);
 	}
 
 	@Override
 	public boolean isResourceAvailable(Long idResource) {
-		return retrieveResource(idResource).isAvailable();
+		return getResource(idResource).isAvailable();
 	}
 }

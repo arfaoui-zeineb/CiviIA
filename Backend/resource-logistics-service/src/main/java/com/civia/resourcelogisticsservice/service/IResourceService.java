@@ -7,15 +7,15 @@ import com.civia.resourcelogisticsservice.domain.ResourceStatus;
 
 public interface IResourceService {
 
-	List<Resource> retrieveAllResources();
+	List<Resource> getAllResources();
 
 	Resource addResource(Resource resource);
 
 	Resource updateResource(Resource resource);
 
-	Resource retrieveResource(Long idResource);
+	Resource getResource(Long idResource);
 
-	void removeResource(Long idResource);
+	void deleteResource(Long idResource);
 
 	Resource changeStatus(Long idResource, ResourceStatus status);
 
