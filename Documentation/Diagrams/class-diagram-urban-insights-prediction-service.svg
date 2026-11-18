@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1160" height="1560" viewBox="0 0 1160 1560">
+<rect width="1160" height="1560" fill="#FFFFFF"/>
+<text x="580" y="58" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="600" fill="#393939" text-anchor="middle">CiviIA — Urban Insights &amp; Prediction Service</text>
+<text x="580" y="92" font-family="Segoe UI, Arial, sans-serif" font-size="18" fill="#393939" text-anchor="middle">Diagramme de classes · 7 entités · 4 relations</text>
+<polygon points="177.5,122 184,128 190.5,122 184,116" fill="#645F7C" stroke="#645F7C" stroke-width="1.2"/>
+<text x="200.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">composition</text>
+<polygon points="313.5,122 320,128 326.5,122 320,116" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<text x="336.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">agrégation</text>
+<line x1="438.5" y1="122" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<line x1="443.5" y1="126.5" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<line x1="443.5" y1="117.5" x2="454.5" y2="122" stroke="#645F7C" stroke-width="1.4"/>
+<text x="461.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" fill="#393939" text-anchor="start">association</text>
+<text x="564.5" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="600" fill="#A63A3A" text-anchor="start">Entité (rouge) = référence par identifiant entre services</text>
+<rect x="60" y="152" width="1040" height="1114" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="60" y="152" width="1040" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="60" y1="208" x2="1100" y2="208" stroke="#645F7C" stroke-width="1.0"/>
+<text x="580" y="186" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Modèles, prédictions, alertes et indicateurs</text>
+<rect x="90" y="224" width="420" height="234" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="90" y="224" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="90" y1="258" x2="510" y2="258" stroke="#645F7C" stroke-width="1.0"/>
+<text x="300.0" y="247.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">MLModel</text>
+<text x="102" y="282" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="102" y="305" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+name: String</text>
+<text x="102" y="328" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+task: String</text>
+<text x="102" y="351" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+version: String</text>
+<text x="102" y="374" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: ModelStatus</text>
+<text x="102" y="397" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+metrics: JSON</text>
+<text x="102" y="420" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+artifactUri: String</text>
+<text x="102" y="443" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+trainedAt: DateTime</text>
+<rect x="90" y="488" width="420" height="257" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="90" y="488" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="90" y1="522" x2="510" y2="522" stroke="#645F7C" stroke-width="1.0"/>
+<text x="300.0" y="511.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Prediction</text>
+<text x="102" y="546" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="102" y="569" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+modelId: Long → MLModel</text>
+<text x="102" y="592" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+targetType: String</text>
+<text x="102" y="615" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+targetId: Long → autre service</text>
+<text x="102" y="638" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+output: JSON</text>
+<text x="102" y="661" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+confidence: Double</text>
+<text x="102" y="684" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+explanation: Text</text>
+<text x="102" y="707" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+needsReview: boolean</text>
+<text x="102" y="730" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<rect x="90" y="775" width="420" height="257" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="90" y="775" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="90" y1="809" x2="510" y2="809" stroke="#645F7C" stroke-width="1.0"/>
+<text x="300.0" y="798.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Hotspot</text>
+<text x="102" y="833" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="102" y="856" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+centerLatitude: Double</text>
+<text x="102" y="879" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+centerLongitude: Double</text>
+<text x="102" y="902" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+radiusMeters: int</text>
+<text x="102" y="925" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+categoryId: Long → Category</text>
+<text x="102" y="948" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+incidentCount: int</text>
+<text x="102" y="971" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+severityScore: Double</text>
+<text x="102" y="994" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: String</text>
+<text x="102" y="1017" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+detectedAt: DateTime</text>
+<rect x="90" y="1062" width="420" height="188" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="90" y="1062" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="90" y1="1096" x2="510" y2="1096" stroke="#645F7C" stroke-width="1.0"/>
+<text x="300.0" y="1085.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">InsightReport</text>
+<text x="102" y="1120" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="102" y="1143" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+periodStart: Date</text>
+<text x="102" y="1166" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+periodEnd: Date</text>
+<text x="102" y="1189" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+kpis: JSON</text>
+<text x="102" y="1212" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+fileUrl: String</text>
+<text x="102" y="1235" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+generatedAt: DateTime</text>
+<rect x="650" y="224" width="420" height="211" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="650" y="224" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="650" y1="258" x2="1070" y2="258" stroke="#645F7C" stroke-width="1.0"/>
+<text x="860.0" y="247.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">TrainingJob</text>
+<text x="662" y="282" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="662" y="305" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+modelId: Long → MLModel</text>
+<text x="662" y="328" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: String</text>
+<text x="662" y="351" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+startedAt: DateTime</text>
+<text x="662" y="374" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+endedAt: DateTime</text>
+<text x="662" y="397" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+datasetSize: int</text>
+<text x="662" y="420" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+metrics: JSON</text>
+<rect x="650" y="449" width="420" height="165" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="650" y="449" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="650" y1="483" x2="1070" y2="483" stroke="#645F7C" stroke-width="1.0"/>
+<text x="860.0" y="472.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">PredictionFeedback</text>
+<text x="662" y="507" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="662" y="530" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+predictionId: Long → Prediction</text>
+<text x="662" y="553" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+actualValue: String</text>
+<text x="662" y="576" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+isCorrect: boolean</text>
+<text x="662" y="599" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<rect x="650" y="628" width="420" height="280" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="650" y="628" width="420" height="34" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="650" y1="662" x2="1070" y2="662" stroke="#645F7C" stroke-width="1.0"/>
+<text x="860.0" y="651.0" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#393939" text-anchor="middle">Alert</text>
+<text x="662" y="686" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+id: Long</text>
+<text x="662" y="709" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+type: String</text>
+<text x="662" y="732" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+severity: String</text>
+<text x="662" y="755" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+predictionId: Long → Prediction</text>
+<text x="662" y="778" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+targetType: String</text>
+<text x="662" y="801" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+targetId: Long → autre service</text>
+<text x="662" y="824" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#A63A3A" text-anchor="start">+departmentId: Long → Department</text>
+<text x="662" y="847" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+message: Text</text>
+<text x="662" y="870" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+status: AlertStatus</text>
+<text x="662" y="893" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#393939" text-anchor="start">+createdAt: DateTime</text>
+<line x1="510" y1="341" x2="650" y2="330" stroke="#645F7C" stroke-width="1.4"/>
+<text x="516" y="337" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">1</text>
+<text x="618" y="334" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<line x1="120" y1="458" x2="120" y2="488" stroke="#645F7C" stroke-width="1.4"/>
+<text x="126" y="472" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">1</text>
+<text x="126" y="486" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<line x1="510" y1="590" x2="650" y2="540" stroke="#645F7C" stroke-width="1.4"/>
+<text x="516" y="586" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">1</text>
+<text x="620" y="544" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<line x1="510" y1="690" x2="650" y2="762" stroke="#645F7C" stroke-width="1.4"/>
+<text x="516" y="700" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">1</text>
+<text x="620" y="758" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#393939" text-anchor="start">0..*</text>
+<rect x="60" y="1306" width="1040" height="172" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.6"/>
+<rect x="60" y="1306" width="1040" height="56" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="60" y1="1362" x2="1100" y2="1362" stroke="#645F7C" stroke-width="1.0"/>
+<text x="580" y="1334" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="600" fill="#393939" text-anchor="middle">Énumérations</text>
+<rect x="340" y="1378" width="230" height="84" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="340" y="1378" width="230" height="48" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="340" y1="1426" x2="570" y2="1426" stroke="#645F7C" stroke-width="1.0"/>
+<text x="455.0" y="1398" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="middle">«enumeration»</text>
+<text x="455.0" y="1417" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">ModelStatus</text>
+<text x="352" y="1448" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">(valeurs à confirmer)</text>
+<rect x="590" y="1378" width="230" height="84" fill="#FFFFFF" stroke="#645F7C" stroke-width="1.2"/>
+<rect x="590" y="1378" width="230" height="48" fill="#FCEBF1" stroke="#645F7C" stroke-width="1.2"/>
+<line x1="590" y1="1426" x2="820" y2="1426" stroke="#645F7C" stroke-width="1.0"/>
+<text x="705.0" y="1398" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#393939" text-anchor="middle">«enumeration»</text>
+<text x="705.0" y="1417" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="600" fill="#393939" text-anchor="middle">AlertStatus</text>
+<text x="602" y="1448" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">(valeurs à confirmer)</text>
+<line x1="90" y1="1500" x2="1070" y2="1500" stroke="#645F7C" stroke-width="0.9"/>
+<text x="90" y="1525" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#393939" text-anchor="start">Références interservices : </text>
+<text x="241" y="1525" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#A63A3A" text-anchor="start">Department (departmentId)</text>
+<text x="430" y="1525" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#A63A3A" text-anchor="start">· Category (categoryId)</text>
+<text x="610" y="1525" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#A63A3A" text-anchor="start">· autre service (targetId)</text>
+</svg>
