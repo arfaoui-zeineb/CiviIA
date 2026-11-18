@@ -1,290 +1,70 @@
-# Municipal Communication & Events Service
+# CivicPulse - Microservice Municipal Communication & Events
 
-<<<<<<< HEAD
-## 1. Présentation
+Service Spring Boot autonome assurant la communication officielle de la municipalité (annonces, avis, alertes) et l'organisation d'événements locaux (inscriptions des citoyens).
 
-Le **Municipal Communication & Events Service** est un microservice backend de la plateforme CivicPulse / CiviIA. Il assure la communication officielle de la municipalité et l'organisation des événements locaux, comme un panneau d'affichage numérique.
+---
 
-Le module est autonome : il ne référence les autres services que par identifiants (`departmentId`, `userId`), sans clé étrangère inter-bases (dossier technique § 4.6).
+## 1. Caractéristiques d'Architecture
 
-## 2. Responsabilités
+- **Autonomie des données** : Base relationnelle propre (PostgreSQL), aucun couplage avec d'autres bases de données.
+- **Identités externes** : Références logiques via `departmentId` et `userId` (fourni via token JWT / Keycloak claim `sub`).
+- **Inscriptions concurrentes sécurisées** : Incrément atomique conditionnel SQL avec basculement automatique du statut en `FULL` et retour en `OPEN` lors des annulations.
+- **Contrainte d'unicité partielle** : Index unique `(event_id, user_id) WHERE status = 'REGISTERED'` empêchant les inscriptions multiples actives.
+- **Stockage de fichiers** : Découplé via `StorageService` (Cloudinary pour la production, mock pour le développement local).
+- **Résilience** : Circuit Breaker et Retry Resilience4j pour les appels d'annuaire des départements avec fonctionnement en mode dégradé.
+- **Tâche planifiée** : Expiration automatique périodique des annonces dont la date `expiresAt` est échue.
 
-- Publier des annonces officielles classées par catégorie.
-- Joindre des fichiers et médias à une annonce.
-- Organiser des événements dans des lieux municipaux.
-- Gérer les inscriptions aux événements et leur capacité.
+---
 
-## 3. Modèle de données (dossier technique § 4.6)
+## 2. Démarrage Rapide
 
-| Entité | Attributs principaux |
-|---|---|
-| `Category` | id, name, description, active |
-| `Announcement` | id, categoryId, departmentId, eventId, title, content, status, priority, publishedAt, expiresAt |
-| `Attachment` | id, announcementId, fileName, fileUrl, type, sizeBytes, uploadedAt |
-| `Event` | id, categoryId, venueId, departmentId, title, description, startDate, endDate, capacity, registeredCount, status |
-| `Venue` | id, name, address, latitude, longitude, capacity |
-| `EventRegistration` | id, eventId, userId, status, registeredAt, cancelledAt |
+### Prérequis
+- Java 17+
+- Maven 3.8+
+- Docker & Docker Compose (optionnel pour PostgreSQL)
 
-### Énumérations
-
-| Énumération | Valeurs |
-|---|---|
-| `AnnouncementStatus` | DRAFT, PUBLISHED, EXPIRED, ARCHIVED |
-| `AnnouncementPriority` | LOW, NORMAL, HIGH, URGENT |
-| `EventStatus` | DRAFT, OPEN, FULL, CLOSED, CANCELLED |
-| `RegistrationStatus` | REGISTERED, CANCELLED (valeurs proposées) |
-
-### Règles métier
-
-- Une inscription est refusée quand `registeredCount` a atteint `capacity`. L'incrément est protégé par un **verrou optimiste** (`@Version` sur `Event`) : en cas d'inscriptions simultanées, la seconde échoue avec un conflit 409.
-- Une annulation renseigne `cancelledAt` et décrémente `registeredCount` ; un événement `FULL` repasse en `OPEN`.
-- Un utilisateur n'a qu'une inscription active par événement.
-- `endDate` est postérieure à `startDate` ; si un lieu est défini, `capacity` ne dépasse pas celle du `Venue`.
-- Une annonce dont `expiresAt` est dépassée passe à `EXPIRED` (tâche planifiée, toutes les heures).
-- `Category` est partagée entre annonces et événements (§ 8.3.4) : pas d'`AnnouncementCategory` séparée.
-
-## 4. API
-
-### Catégories — `/api/categories`
-GET (liste), GET `/{id}`, POST, PUT `/{id}`, DELETE `/{id}`.
-
-### Annonces — `/api/announcements`
-GET (liste), GET `/{id}`, POST, PUT `/{id}`, POST `/{id}/publish`, DELETE `/{id}` (archive), GET `/{id}/attachments`, POST `/{id}/attachments`.
-
-### Pièces jointes — `/api/announcement-attachments`
-GET `/{id}`, DELETE `/{id}`.
-
-### Événements — `/api/events`
-GET (liste), GET `/{id}`, POST, PUT `/{id}`, POST `/{id}/open`, DELETE `/{id}` (annulation), GET `/{id}/registrations`, POST `/{id}/registrations`.
-
-### Inscriptions — `/api/event-registrations`
-GET `/{id}`, DELETE `/{id}` (annulation).
-
-### Lieux — `/api/venues`
-GET (liste), GET `/{id}`, POST, PUT `/{id}`, DELETE `/{id}`.
-
-### Erreurs
-
-Corps d'erreur unique `{ timestamp, status, error, message, path }` : 400 (validation), 404 (introuvable), 409 (capacité atteinte / doublon / accès concurrent), 422 (règle métier).
-
-## 5. Technologies
-
-Java 17 · Spring Boot 4.1.2 · Spring Web MVC · Spring Data JPA · Spring Validation · Lombok · MySQL (H2 en tests).
-
-## 6. Structure
-
-```
-municipal-communication-events-service/
-├── src/main/java/com/civia/municipalcommunicationeventsservice/
-│   ├── MunicipalCommunicationEventsServiceApplication.java
-│   ├── domain/model/          # 6 entites + enumerations
-│   ├── domain/repository/     # repositories JPA
-│   ├── service/               # regles metier + tache d'expiration
-│   ├── web/                   # controleurs REST
-│   ├── web/dto/               # requetes et reponses
-│   └── exception/             # erreurs et gestionnaire global
-├── src/main/resources/application.properties
-└── src/test/java/             # tests unitaires et test de contexte
-```
-
-## 7. Diagramme de classes
-
-![Diagramme de classes du Municipal Communication & Events Service](../../Documentation/Diagrams/class-diagram-municipal-communication-events-service.png)
-
-Version haute résolution : [class-diagram-municipal-communication-events-service.svg](../../Documentation/Diagrams/class-diagram-municipal-communication-events-service.svg)
-
-## 8. Lancement
-
+### Lancement avec Docker Compose
 ```bash
-./mvnw spring-boot:run
+docker-compose up -d
 ```
 
-La base de données peut être configurée via `DB_URL`, `DB_USERNAME` et `DB_PASSWORD`.
-=======
-## 1. Overview
-
-The Municipal Communication & Events Service is a backend microservice of the CiviIA platform. It carries the official communication of the municipality and the organisation of local events, like a digital notice board.
-
-It provides REST APIs to create, retrieve, update and archive categories, announcements, attachments, events, registrations and venues.
-
-## 2. Main Responsibilities
-
-- Publish official announcements by category.
-- Attach documents and media to an announcement.
-- Organise local events in municipal venues.
-- Manage event registrations and their capacity.
-
-## 3. Main Entities
-
-### Category
-Represents a theme used to classify announcements and events.
-
-Suggested attributes:
-- id
-- name
-- description
-- active
-
-### Announcement
-Represents an official announcement published by a department.
-
-Suggested attributes:
-- id
-- categoryId
-- departmentId
-- eventId
-- title
-- content
-- status (AnnouncementStatus)
-- priority (AnnouncementPriority)
-- publishedAt
-- expiresAt
-
-### Attachment
-Represents a file attached to an announcement.
-
-Suggested attributes:
-- id
-- announcementId
-- fileName
-- fileUrl
-- type
-- sizeBytes
-- uploadedAt
-
-### Event
-Represents a local event organised by the municipality.
-
-Suggested attributes:
-- id
-- categoryId
-- venueId
-- departmentId
-- title
-- description
-- startDate
-- endDate
-- capacity
-- registeredCount
-- status (EventStatus)
-
-### Venue
-Represents a place that can host an event.
-
-Suggested attributes:
-- id
-- name
-- address
-- latitude
-- longitude
-- capacity
-
-### EventRegistration
-Represents the registration of a user to an event.
-
-Suggested attributes:
-- id
-- eventId
-- userId
-- status
-- registeredAt
-- cancelledAt
-
-### Enumerations
-
-| Enumeration | Values |
-|---|---|
-| AnnouncementStatus | DRAFT, PUBLISHED, EXPIRED, ARCHIVED |
-| AnnouncementPriority | LOW, NORMAL, HIGH, URGENT |
-| EventStatus | DRAFT, OPEN, FULL, CLOSED, CANCELLED |
-
-### Business Rules
-
-- A registration is refused when `registeredCount` has reached `capacity`; the increment must be atomic (optimistic lock or conditional update) to avoid overbooking during simultaneous registrations.
-- A cancellation sets `cancelledAt` and decrements `registeredCount`.
-- A user has only one active registration per event.
-- `endDate` must be after `startDate`; if a venue is set, `capacity` must not exceed the capacity of the venue.
-- An announcement whose `expiresAt` is passed becomes expired (scheduled task).
-
-Cross-service references are kept as external identifiers, without any inter-database foreign key:
-- `Announcement.departmentId`, `Event.departmentId` → Department (external identity directory)
-- `EventRegistration.userId` → User (taken from the JWT)
-
-## 4. Technologies
-
-- Java
-- Spring Boot
-- Spring Web
-- Spring Data JPA
-- MySQL (database)
-
-## 5. API Endpoints
-
-### Category
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/categories` | Get all categories |
-| GET | `/api/categories/{id}` | Get category by ID |
-| POST | `/api/categories` | Create category |
-| PUT | `/api/categories/{id}` | Update category |
-| DELETE | `/api/categories/{id}` | Delete category |
-
-### Announcement
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/announcements` | Get all announcements |
-| GET | `/api/announcements/{id}` | Get announcement by ID |
-| POST | `/api/announcements` | Create announcement |
-| PUT | `/api/announcements/{id}` | Update announcement |
-| DELETE | `/api/announcements/{id}` | Archive announcement |
-
-### Attachment
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/announcements/{id}/attachments` | Get attachments of an announcement |
-| POST | `/api/announcements/{id}/attachments` | Add an attachment to an announcement |
-| DELETE | `/api/announcement-attachments/{id}` | Delete an attachment |
-
-### Event
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/events` | Get all events |
-| GET | `/api/events/{id}` | Get event by ID |
-| POST | `/api/events` | Create event |
-| PUT | `/api/events/{id}` | Update event |
-| DELETE | `/api/events/{id}` | Cancel event |
-
-### Event Registration
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/events/{id}/registrations` | Get registrations of an event |
-| POST | `/api/events/{id}/registrations` | Register a user to an event |
-| DELETE | `/api/event-registrations/{id}` | Cancel a registration |
-
-### Venue
-| Method | Endpoint | Description |
-|---|---|---|
-| GET | `/api/venues` | Get all venues |
-| GET | `/api/venues/{id}` | Get venue by ID |
-| POST | `/api/venues` | Create venue |
-| PUT | `/api/venues/{id}` | Update venue |
-| DELETE | `/api/venues/{id}` | Delete venue |
-
-## 6. Project Structure
-
+### Lancement en local (profil dev)
+```bash
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
 ```
-municipal-communication-events-service/
-├── src/
-│   └── main/
-│       ├── java/
-│       └── resources/
-├── pom.xml
-└── README.md
+L'application démarre sur le port `8081`.
+
+---
+
+## 3. Endpoints Principaux
+
+| Ressource | Méthode | URI | Description |
+| :--- | :--- | :--- | :--- |
+| **Categories** | `POST` | `/api/v1/categories` | Créer une catégorie |
+| | `GET` | `/api/v1/categories` | Liste paginée des catégories |
+| **Venues** | `POST` | `/api/v1/venues` | Créer un lieu municipal |
+| | `GET` | `/api/v1/venues` | Liste paginée des lieux |
+| **Events** | `POST` | `/api/v1/events` | Créer un événement (DRAFT) |
+| | `GET` | `/api/v1/events` | Liste avec filtres et pagination |
+| | `POST` | `/api/v1/events/{id}/open` | Ouvrir l'événement aux inscriptions |
+| | `POST` | `/api/v1/events/{id}/close` | Clôturer l'événement |
+| | `POST` | `/api/v1/events/{id}/cancel` | Annuler l'événement |
+| | `POST` | `/api/v1/events/{id}/registrations` | S'inscrire à l'événement |
+| | `POST` | `/api/v1/events/{id}/registrations/cancel`| Annuler son inscription |
+| **Announcements** | `POST` | `/api/v1/announcements` | Créer une annonce |
+| | `POST` | `/api/v1/announcements/{id}/publish` | Publier l'annonce |
+| | `POST` | `/api/v1/announcements/{id}/archive` | Archiver l'annonce |
+| | `POST` | `/api/v1/announcements/{id}/attachments`| Téléverser une pièce jointe |
+
+Documentation interactive OpenAPI / Swagger UI :  
+`http://localhost:8081/swagger-ui.html`
+
+---
+
+## 4. Tests
+
+Exécuter la suite complète de tests (tests unitaires de règles métier, tests de concurrence multithreadés, tests de tâches planifiées) :
+```bash
+mvn test
 ```
 
-## 7. Class Diagram
-
-![Class diagram](../../Documentation/Diagrams/class-diagram-municipal-communication-events-service.png)
-
-Full resolution: [class-diagram-municipal-communication-events-service.svg](../../Documentation/Diagrams/class-diagram-municipal-communication-events-service.svg)
->>>>>>> 7ca5f39495356971a7a40b67ef97ddb2e58bb708
