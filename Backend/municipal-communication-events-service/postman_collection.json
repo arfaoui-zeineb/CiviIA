@@ -1,0 +1,126 @@
+{
+  "info": {
+    "name": "CivicPulse - Municipal Communication and Events API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Categories",
+      "item": [
+        {
+          "name": "Create Category",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Culture et Loisirs\",\n  \"description\": \"Événements et annonces culturelles\",\n  \"active\": true\n}"
+            },
+            "url": "http://localhost:8081/api/v1/categories"
+          }
+        },
+        {
+          "name": "List Categories",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8081/api/v1/categories"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Venues",
+      "item": [
+        {
+          "name": "Create Venue",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Salle Municipale Polyvalente\",\n  \"address\": \"12 Rue de la République\",\n  \"latitude\": 48.8566,\n  \"longitude\": 2.3522,\n  \"capacity\": 120\n}"
+            },
+            "url": "http://localhost:8081/api/v1/venues"
+          }
+        },
+        {
+          "name": "List Venues",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:8081/api/v1/venues"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Events",
+      "item": [
+        {
+          "name": "Create Event",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"categoryId\": 1,\n  \"venueId\": 1,\n  \"departmentId\": 3,\n  \"title\": \"Concert de Printemps\",\n  \"description\": \"Concert de musique classique gratuit pour tous les citoyens\",\n  \"startDate\": \"2026-05-15T18:00:00Z\",\n  \"endDate\": \"2026-05-15T21:00:00Z\",\n  \"capacity\": 100\n}"
+            },
+            "url": "http://localhost:8081/api/v1/events"
+          }
+        },
+        {
+          "name": "Open Event",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:8081/api/v1/events/1/open"
+          }
+        },
+        {
+          "name": "Register Citizen to Event",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:8081/api/v1/events/1/registrations"
+          }
+        },
+        {
+          "name": "Cancel Citizen Registration",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:8081/api/v1/events/1/registrations/cancel"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Announcements",
+      "item": [
+        {
+          "name": "Create Announcement",
+          "request": {
+            "method": "POST",
+            "header": [{"key": "Content-Type", "value": "application/json"}],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"categoryId\": 1,\n  \"departmentId\": 2,\n  \"title\": \"Avis de travaux sur le réseau d'eau\",\n  \"content\": \"Une coupure d'eau est prévue le jeudi 20 entre 8h et 12h.\",\n  \"priority\": \"HIGH\",\n  \"expiresAt\": \"2026-06-01T00:00:00Z\"\n}"
+            },
+            "url": "http://localhost:8081/api/v1/announcements"
+          }
+        },
+        {
+          "name": "Publish Announcement",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:8081/api/v1/announcements/1/publish"
+          }
+        },
+        {
+          "name": "Archive Announcement",
+          "request": {
+            "method": "POST",
+            "url": "http://localhost:8081/api/v1/announcements/1/archive"
+          }
+        }
+      ]
+    }
+  ]
+}
+
