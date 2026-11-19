@@ -44,9 +44,10 @@ issues GitHub et mis à jour à chaque séance.
 ### Resource & Logistics Service — Zeineb
 - [x] Squelette du service + README
 - [x] Diagramme de classes du service : `Team`, `Resource`, `ResourceReservation` + 4 énumérations
-- [ ] Création des entités JPA et des repositories
-- [ ] CRUD des 3 entités
-- [ ] Disponibilité et réservation des ressources (chevauchement refusé)
+- [x] Création des entités JPA et des repositories (couches `domain`, `repository`, `service`, `controller`)
+- [x] CRUD des 3 entités (interfaces `I*Service` + controllers REST)
+- [x] Disponibilité et réservation des ressources (chevauchement refusé)
+- [x] Tests unitaires des règles de disponibilité et de réservation
 
 ### Intervention Service — Yessine
 - [x] Squelette du service + README

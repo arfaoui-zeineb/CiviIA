@@ -66,7 +66,7 @@ Suggested operations:
 | ResourceType | VEHICLE, EQUIPMENT, TOOL |
 | ResourceStatus | AVAILABLE, RESERVED, IN_USE, MAINTENANCE |
 | ReservationStatus | PENDING, CONFIRMED, CANCELLED, COMPLETED |
-| TeamStatus | to be confirmed |
+| TeamStatus | AVAILABLE, BUSY, ON_LEAVE, INACTIVE |
 
 ### Business Rules
 
@@ -122,15 +122,25 @@ Cross-service references are kept as external identifiers, without any inter-dat
 
 ## 6. Project Structure
 
+The code follows the same layered structure as the Spring Boot reference project:
+
 ```
 resource-logistics-service/
 ├── src/
-│   └── main/
-│       ├── java/
-│       └── resources/
+│   ├── main/
+│   │   ├── java/com/civia/resourcelogisticsservice/
+│   │   │   ├── domain/        # JPA entities and enumerations
+│   │   │   ├── repository/    # CrudRepository interfaces
+│   │   │   ├── service/       # I*Service interfaces and implementations
+│   │   │   ├── controller/    # REST controllers
+│   │   │   └── ResourceLogisticsServiceApplication.java
+│   │   └── resources/application.properties
+│   └── test/java/             # unit tests of the business rules
 ├── pom.xml
 └── README.md
 ```
+
+The controllers expose both the REST paths listed above (`/api/...`) and the aliases used in the reference project (`/Team/addTeam`, `/Team/getTeams`, `/Resource/addResource`, `/ResourceReservation/addReservation`, ...).
 
 ## 7. Class Diagram
 
